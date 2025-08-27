@@ -1,0 +1,55 @@
+arealtype;regnskapstema;forvaltningsinteresse_nivå;forvaltningsinteresse_verdi
+Verneområder;Økosystemareal;Vernet;5
+Utvalgte naturtyper;Økosystemareal;Vernet;5
+Økologiske funksjonsområder for prioriterte arter innen planter og lav;Økosystemareal;Vernet;5
+Naturtyper etter Miljødirektoratets instruks;Økosystemareal;CR ;4
+Naturtyper etter Miljødirektoratets instruks;Økosystemareal;EN;4
+Naturtyper etter Miljødirektoratets instruks;Økosystemareal;VU ;3
+Naturtyper etter Miljødirektoratets instruks;Økosystemareal;NT;2
+Naturtyper etter Miljødirektoratets instruks;Økosystemareal;Sentral økosystem-funksjon;2
+Naturtyper etter Miljødirektoratets instruks;Økosystemareal;Dårlig kartlagt;2
+Øvrig natur;Økosystemareal;Ingen;1
+Sterkt endrede arealer;Økosystemareal;Ingen;1
+Villrein;Økologiske funksjonsområder;Nært truet;2
+Funksjonsområder for arter av nasjonal forvaltningsinteresse;Økologiske funksjonsområder;Prioritert art;5
+Funksjonsområder for arter av nasjonal forvaltningsinteresse;Økologiske funksjonsområder;CR ;4
+Funksjonsområder for arter av nasjonal forvaltningsinteresse;Økologiske funksjonsområder;EN;4
+Funksjonsområder for arter av nasjonal forvaltningsinteresse;Økologiske funksjonsområder;VU ;3
+Funksjonsområder for arter av nasjonal forvaltningsinteresse;Økologiske funksjonsområder;Andre spesielt hensynskrevende arter;3
+Funksjonsområder for arter av nasjonal forvaltningsinteresse;Økologiske funksjonsområder;NT;2
+Funksjonsområder for arter av nasjonal forvaltningsinteresse;Økologiske funksjonsområder;Ansvarsart;2
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Prioritert art;4
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;CR ;4
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;EN;4
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Nasjonale laksevassdrag;4
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Andre spesielt verdifulle laksevassdrag;4
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Sjøørret (stor bestand);4
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Sjørøye (rent elvelevende bestand);4
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Stort potensiale for smoltproduksjon;4
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Spesielt verdifulle storørretbestander;4
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;VU ;3
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Spesielt hensynskrevende arter;3
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Laks/sjøørretvassdrag med middels store bestander;3
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Sjørøye (livskraftig bestand);3
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Godt potensiale for smoltproduksjon;3
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Langtvandrende bestand av harr, ørret og sik;3
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Vassdrag (potensielt) høyproduktive for ørret, røye eller sik;3
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Vassdrag med stor andel storvokst ørret;3
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;NT;2
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Laks/sjøørretvassdrag med små bestander;2
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Sjørøye (mindre bestand);2
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Middels potensial for smoltproduksjon;2
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Vassdrag med fiskebestander av regional/lokal verdi;2
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Alminnelige og vidt utbredte arter og deres funksjonsområder;1
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Vassdrag med sporadisk forekomst av anadrom fisk (ikke stedegen bestand);1
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Innlandsfisk: små bestander uten spesielle verdier;1
+Limniske naturtyper;Vannforekomster;EN (A og B verdi);4
+Limniske naturtyper;Vannforekomster;CR (A og B verdi);4
+Limniske naturtyper;Vannforekomster;VU (A verdi);4
+Limniske naturtyper;Vannforekomster;CR (C verdi);3
+Limniske naturtyper;Vannforekomster;EN (C verdi);3
+Limniske naturtyper;Vannforekomster;VU (B og C verdi);3
+Limniske naturtyper;Vannforekomster;A-lokaliteter av naturtyper etter DN-HB13, inkl. NT naturtyper;3
+Limniske naturtyper;Vannforekomster;NT (B og C verdi);2
+Limniske naturtyper;Vannforekomster;B-lokaliteter av naturtyper etter DN-HB13;2
+Limniske naturtyper;Vannforekomster;C-lokaliteter av naturtyper etter DN-HB13;1

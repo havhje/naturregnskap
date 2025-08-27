@@ -1,0 +1,4 @@
+avstand fra inngrep;risikofaktor_avstand fra inngrep
+Utenfor prosjektområde, men i samme bioklimatiske sone;0.5
+I direkte nærhet til prosjektområde (utenfor buffersone, men innen radius 20 km);0.75
+Innenfor prosjektområdet + buffersone på 2 km;1.0

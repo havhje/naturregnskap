@@ -1,0 +1,216 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.15.0"
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "2ede4b9a0d1850d1624a6a5547b8cb95",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h1 id=\"naturregnskap-metode\">Naturregnskap metode</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "1b48295397f6cbaaaa42922db38318c4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h1 id=\"inndeling-av-naturmangfoldet\">Inndeling av naturmangfoldet</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "9ec1a24a56b601e85e94255e129a2d05",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"kosystemareal\">\u00d8kosystemareal</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": null,
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": null,
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": null,
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": null,
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": null,
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": null,
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "17f23e7ae8040746c6361ef0776613b7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"1-naturpoeng-fr-inngrep\">1. Naturpoeng (f\u00f8r inngrep)</h3>\n<marimo-tex class=\"arithmatex\">||[\n\\text{Naturpoeng}_{\\text{f\u00f8r}} = A_{t0} \\times Nk_{t0} \\times Nf_{t0}\n||]</marimo-tex><h3 id=\"2-naturpoeng-tapt\">2. Naturpoeng (tapt)</h3>\n<marimo-tex class=\"arithmatex\">||[\n\\text{Naturpoeng (tapt)} = (A_{\\text{tapt}} \\times Nk_{t0} \\times Nf_{t0}) + (A_{\\text{rest}} \\times Nk_{t0} \\times Nf_{t0}) \\times P\n||]</marimo-tex><h3 id=\"3-1-naturpoeng-skapt-natur\">3-1. Naturpoeng (skapt natur)</h3>\n<marimo-tex class=\"arithmatex\">||[\n\\text{Naturpoeng (skapt)} = A_{t1} \\times Nk_{t1} \\times Nf_{t1} \\times R_{\\text{avst}} \\times R_{\\text{tid}} \\times R_{\\text{van}}\n||]</marimo-tex><h3 id=\"3-2-naturpoeng-skapt-natur-off-site\">3-2. Naturpoeng (skapt natur off-site)</h3>\n<marimo-tex class=\"arithmatex\">||[\n\\text{Naturpoeng (off-site)} = \\{(A_{t1} \\times Nk_{t1} \\times Nf_{t1}) - (A_{t0} \\times Nk_{t0} \\times Nf_{t0})\\} \\times R_{\\text{van}} \\times R_{\\text{tid}} \\times R_{\\text{avst}}\n||]</marimo-tex><h3 id=\"total-endring-av-naturpoeng\">Total endring av Naturpoeng</h3>\n<marimo-tex class=\"arithmatex\">||[\n\\text{Total endring} = \\sum \\text{Naturpoeng}_{\\text{f\u00f8r}} - \\sum \\text{Naturpoeng}_{\\text{tapt}} + \\sum \\text{Naturpoeng}_{\\text{skapt}}\n||]</marimo-tex></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "b51ba5fd4a8b685f0d221f835c478e8c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"1-naturpoeng-fr-inngrep\">1. Naturpoeng (f\u00f8r inngrep)</h3>\n<marimo-tex class=\"arithmatex\">||[\n\\text{Naturpoeng (f\u00f8r inngrep)} = (\\text{Utstrekning f\u00f8r inngrep}) \\times (\\text{Naturkvalitet f\u00f8r inngrep}) \\times (\\text{Forvaltningsinteresse f\u00f8r inngrep})\n||]</marimo-tex><h3 id=\"2-naturpoeng-tapt\">2. Naturpoeng (tapt)</h3>\n<marimo-tex class=\"arithmatex\">||[\n\\begin{aligned}\n\\text{Naturpoeng (tapt)} = &amp; \\; (\\text{Tapt utstrekning} \\times \\text{Naturkvalitet f\u00f8r inngrep} \\times \\text{Forvaltningsinteresse f\u00f8r inngrep}) \\\\\n&amp; + (\\text{Resterende utstrekning} \\times \\text{Naturkvalitet f\u00f8r inngrep} \\times \\text{Forvaltningsinteresse f\u00f8r inngrep}) \\times \\text{P\u00e5virkningsfaktor}\n\\end{aligned}\n||]</marimo-tex><h3 id=\"3-1-naturpoeng-skapt-natur\">3-1. Naturpoeng (skapt natur)</h3>\n<marimo-tex class=\"arithmatex\">||[\n\\begin{aligned}\n\\text{Naturpoeng (skapt)} = &amp; \\; (\\text{Utstrekning etter tiltak}) \\times (\\text{M\u00e5l for naturkvalitet}) \\times (\\text{Forvaltningsinteresse}) \\\\\n&amp; \\times (\\text{Risikofaktor avstand}) \\times (\\text{Risikofaktor tid}) \\times (\\text{Risikofaktor vanskelighetsgrad})\n\\end{aligned}\n||]</marimo-tex><h3 id=\"3-2-naturpoeng-skapt-natur-off-site\">3-2. Naturpoeng (skapt natur off-site)</h3>\n<marimo-tex class=\"arithmatex\">||[\n\\begin{aligned}\n\\text{Naturpoeng (off-site)} = &amp; \\; \\{(\\text{Utstrekning etter tiltak} \\times \\text{M\u00e5l for naturkvalitet} \\times \\text{Forvaltningsinteresse}) \\\\\n&amp; - (\\text{Utstrekning f\u00f8r tiltak} \\times \\text{Naturkvalitet f\u00f8r tiltak} \\times \\text{Forvaltningsinteresse f\u00f8r tiltak})\\} \\\\\n&amp; \\times \\text{Risikofaktor vanskelighetsgrad} \\times \\text{Risikofaktor tid} \\times \\text{Risikofaktor avstand}\n\\end{aligned}\n||]</marimo-tex><h3 id=\"total-endring-av-naturpoeng\">Total endring av Naturpoeng</h3>\n<marimo-tex class=\"arithmatex\">||[\n\\text{Total endring} = (\\sum \\text{Naturpoeng f\u00f8r}) - (\\sum \\text{Naturpoeng tapt}) + (\\sum \\text{Naturpoeng skapt})\n||]</marimo-tex></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "emfo",
+      "code_hash": "0a5b664f64c1f37429b3f1771e97ba62",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "viye",
+      "code_hash": "445c7b987d34ed82451e5a41163796da",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='viye-0' random-id='7dadb0df-8686-d85f-1ebe-ddbf8c12d3f8'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;delomr&#92;&#92;u00e5de&#92;&quot;:&#92;&quot;A&#92;&quot;,&#92;&quot;utstrekning_for_inngrep&#92;&quot;:1.5,&#92;&quot;arealtype&#92;&quot;:&#92;&quot;Verneomr&#92;&#92;u00e5der&#92;&quot;,&#92;&quot;regnskapstema&#92;&quot;:&#92;&quot;&#92;&#92;u00d8kosystemareal&#92;&quot;,&#92;&quot;naturkvalitet_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;h&#92;&#92;u00f8yeste kvalitet&#92;&quot;,&#92;&quot;forvaltningsinteresse_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Vernet&#92;&quot;},{&#92;&quot;delomr&#92;&#92;u00e5de&#92;&quot;:&#92;&quot;B&#92;&quot;,&#92;&quot;utstrekning_for_inngrep&#92;&quot;:25.3,&#92;&quot;arealtype&#92;&quot;:&#92;&quot;Funksjonsomr&#92;&#92;u00e5der for arter av nasjonal forvaltningsinteresse&#92;&quot;,&#92;&quot;regnskapstema&#92;&quot;:&#92;&quot;&#92;&#92;u00d8kologiske funksjonsomr&#92;&#92;u00e5der&#92;&quot;,&#92;&quot;naturkvalitet_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Sv&#92;&#92;u00e6rt h&#92;&#92;u00f8y kvalitet&#92;&quot;,&#92;&quot;forvaltningsinteresse_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;VU&#92;&quot;},{&#92;&quot;delomr&#92;&#92;u00e5de&#92;&quot;:&#92;&quot;C&#92;&quot;,&#92;&quot;utstrekning_for_inngrep&#92;&quot;:5.7,&#92;&quot;arealtype&#92;&quot;:&#92;&quot;Vannforekomster inkl. tilh&#92;&#92;u00f8rende funksjonsomr&#92;&#92;u00e5der for vannlevende organismer&#92;&quot;,&#92;&quot;regnskapstema&#92;&quot;:&#92;&quot;Vannforekomster&#92;&quot;,&#92;&quot;naturkvalitet_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Moderat kvalitet&#92;&quot;,&#92;&quot;forvaltningsinteresse_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Vassdrag med fiskebestander av regional/lokal verdi&#92;&quot;}]&quot;' data-total-rows='3' data-total-columns='6' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;delomr&#92;u00e5de&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;utstrekning_for_inngrep&quot;, [&quot;number&quot;, &quot;f64&quot;]], [&quot;arealtype&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;regnskapstema&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;naturkvalitet_niv&#92;u00e5&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;forvaltningsinteresse_niv&#92;u00e5&quot;, [&quot;string&quot;, &quot;str&quot;]]]' data-show-filters='true' data-show-download='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "fUHD",
+      "code_hash": "93d63fa035e39bcccc58a31e897e582a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "f3ca6090bee6d392d5a3b2aa04cf978c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"utility-functions\">Utility functions</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "earh",
+      "code_hash": "39fe97059f5b3121a5a24e3b50381d4e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    }
+  ]
+}

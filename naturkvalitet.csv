@@ -1,0 +1,34 @@
+arealtype;regnskapstema;naturkvalitet_nivå;naturkvalitet_verdi;naturkvalitet_definisjon
+Verneområder;Økosystemareal;høyeste kvalitet;5.0;Som en følge av at verneområder per definisjon har høyeste forvaltningsprioritet gis ingen faglig vurdering av naturkvaliteten innenfor vernegrensene – isteden tilordnes all vernet natur høyeste kvalitetsklasse. 
+Utvalgte naturtyper;Økosystemareal;høyeste kvalitet;5.0;Ingen
+Økologiske funksjonsområder for prioriterte arter innen planter og lav;Økosystemareal;høyeste kvalitet;5.0;Ingen
+Naturtyper etter Miljødirektoratets instruks;Økosystemareal;Svært høy lokalitetskvalitet;4.0;Følger samme definisjon som for lokalitetskvalitetsmetodikken etter Miljødirektoratets kartleggingsinstruks M-2209
+Naturtyper etter Miljødirektoratets instruks;Økosystemareal;Høy lokalitetskvalitet ;3.0;Følger samme definisjon som for lokalitetskvalitetsmetodikken etter Miljødirektoratets kartleggingsinstruks M-2210
+Naturtyper etter Miljødirektoratets instruks;Økosystemareal;Moderat lokalitetskvalitet;2.2;Følger samme definisjon som for lokalitetskvalitetsmetodikken etter Miljødirektoratets kartleggingsinstruks M-2211
+Naturtyper etter Miljødirektoratets instruks;Økosystemareal;Lav lokalitetskvalitet;2.0;Følger samme definisjon som for lokalitetskvalitetsmetodikken etter Miljødirektoratets kartleggingsinstruks M-2212
+Naturtyper etter Miljødirektoratets instruks;Økosystemareal;Svært lav lokalitetskvalitet;1.0;Følger samme definisjon som for lokalitetskvalitetsmetodikken etter Miljødirektoratets kartleggingsinstruks M-2213
+Øvrig natur;Økosystemareal;Svært høy lokalitetskvalitet;2.0;Arealbruksintensitet 0-6 «Lav arealbruksintensitet» (foreløpige verdier, oppdateres ved ny versjon av kartlaget ABI*)
+Øvrig natur;Økosystemareal;Høy lokalitetskvalitet ;2.0;Arealbruksintensitet 0-6 «Lav arealbruksintensitet» (foreløpige verdier, oppdateres ved ny versjon av kartlaget ABI*)
+Øvrig natur;Økosystemareal;Moderat lokalitetskvalitet;1.2;Arealbruksintensitet 6-11.7 «Bebygde områder» (foreløpige verdier, oppdateres ved ny versjon av kartlaget ABI)
+Øvrig natur;Økosystemareal;Lav lokalitetskvalitet;0.5;Arealbruksintensitet 11.7-13 «Tettbebyggelse» (foreløpige verdier, oppdateres ved ny versjon av kartlaget ABI), granplantasjer
+Øvrig natur;Økosystemareal;Svært lav lokalitetskvalitet;0.0;Arealbruksintensitet 13 «By» (foreløpige verdier, oppdateres ved ny versjon av kartlaget ABI)
+Sterkt endrede arealer;Økosystemareal;Svært lav kvalitet;0.0;Ingen
+Villrein;Økologiske funksjonsområder;Nasjonalt villreinområde;4.0;Ingen
+Villrein;Økologiske funksjonsområder;Fastsatte randområder og øvrige villreinområder;3.0;Ingen
+Villrein;Økologiske funksjonsområder; Fastsatte bygdenære områder ;2.2;Ingen
+Funksjonsområder for arter av nasjonal forvaltningsinteresse;Økologiske funksjonsområder;Prioritert art, fugl og pattedyr Alltid høyeste kvalitet (per def.);5.0;Ingen
+Funksjonsområder for arter av nasjonal forvaltningsinteresse;Økologiske funksjonsområder;Svært høy kvalitet ;4.0;De biotiske og abiotiske egenskapene i det vurderte arealet er nær ideelle for å understøtte viktige artsfunksjoner. Denne svært gode ressurssituasjonen fører til fast bruk og/eller store antall av art(er) innen én eller flere artsgrupper
+Funksjonsområder for arter av nasjonal forvaltningsinteresse;Økologiske funksjonsområder;Høy kvalitet ;3.0;De biotiske og abiotiske egenskapene i det vurderte arealet er meget godt egnet for å understøtte viktige artsfunksjoner. Denne gode ressurssituasjonen fører til regelmessig bruk og/eller ganske store antall av art(er) innen én eller flere artsgrupper
+Funksjonsområder for arter av nasjonal forvaltningsinteresse;Økologiske funksjonsområder;Moderat kvalitet;2.2;De biotiske og abiotiske egenskapene i det vurderte arealet er egnet for å understøtte viktige artsfunksjoner. Denne ressurssituasjonen fører til uregelmessig bruk og/eller moderate antall av art(er) innen én eller flere artsgrupper
+Funksjonsområder for arter av nasjonal forvaltningsinteresse;Økologiske funksjonsområder;Lav kvalitet;2.0;De biotiske og abiotiske egenskapene i det vurderte arealet er i bare i liten grad egnet å understøtte viktige artsfunksjoner. Denne mindre gode ressurssituasjonen fører til liten/sporadisk bruk av aktuelle arter
+Funksjonsområder for arter av nasjonal forvaltningsinteresse;Økologiske funksjonsområder;Svært lav kvalitet;1.0;De biotiske og abiotiske egenskapene i det vurderte arealet er ikke egnet til å understøtte viktige artsfunksjoner. Fraværet av ressurser tilsier at arealet ikke er et funksjonsområde
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Svært høy kvalitet;4.0;Svært god økologisk tilstand (Vann-Nett)
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Høy kvalitet;3.0;God økologisk tilstand (Vann-Nett)
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Moderat kvalitet;2.2;Moderat økologisk tilstand (Vann-Nett)
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Lav kvalitet;2.0;Dårlig økologisk tilstand (Vann-Nett)
+Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Svært lav kvalitet;1.0;Svært dårlig økologisk tilstand (Vann-Nett)
+Limniske naturtyper;Vannforekomster;Svært høy kvalitet;4.0;Svært god økologisk tilstand (Vann-Nett)
+Limniske naturtyper;Vannforekomster;Høy kvalitet;3.0;God økologisk tilstand (Vann-Nett)
+Limniske naturtyper;Vannforekomster;Moderat kvalitet;2.2;Moderat økologisk tilstand (Vann-Nett)
+Limniske naturtyper;Vannforekomster;Lav kvalitet;2.0;Dårlig økologisk tilstand (Vann-Nett)
+Limniske naturtyper;Vannforekomster;Svært lav kvalitet;1.0;Svært dårlig økologisk tilstand (Vann-Nett)

@@ -131,22 +131,96 @@ def _(mo):
 @app.cell(column=1)
 def _():
     import marimo as mo
-    return (mo,)
+    import polars as pl
+    import io
+    import pathlib
+    return io, mo, pl
 
 
-@app.cell
-def _(mo):
-    forvaltning_df = mo.sql(
-        f"""
-        select * from 'C:/Users/havh/OneDrive - Multiconsult/Dokumenter/Kodeprosjekter/naturregnskap/naturregnskap_tabeller*';
-        """
+@app.cell(hide_code=True)
+def _(io, pl):
+    # Lager syntetisk datasett i en polars df
+
+    eksempel_data = """
+    delområde;utstrekning_for_inngrep;arealtype;regnskapstema;naturkvalitet_nivå;forvaltningsinteresse_nivå
+    A;1.5;Verneområder;Økosystemareal;høyeste kvalitet;Vernet
+    B;25.3;Funksjonsområder for arter av nasjonal forvaltningsinteresse;Økologiske funksjonsområder;Svært høy kvalitet;VU
+    C;5.7;Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Moderat kvalitet;Vassdrag med fiskebestander av regional/lokal verdi
+    """
+    delområder_df = pl.read_csv(
+        io.StringIO(eksempel_data),
+        separator=';',
+        schema_overrides={'utstrekning_for_inngrep': pl.Float64}
     )
+
+    delområder_df
+    return (delområder_df,)
+
+
+@app.cell(hide_code=True)
+def _(delområder_df, pl):
+    #Laster csv til df og rydder kolonnene 
+    forvaltnings_interesse_df = (
+        pl.read_csv("forvaltningsinteresse.csv", separator=";", encoding="utf-8", decimal_comma=True)
+        .with_columns([
+            pl.col("arealtype").str.strip_chars(),
+            pl.col("regnskapstema").str.strip_chars(),
+            pl.col("forvaltningsinteresse_nivå").str.strip_chars()
+        ])
+    )
+
+    naturkvalitet_df = (
+        pl.read_csv("naturkvalitet.csv", separator=";", encoding="utf-8", decimal_comma=True)
+        .with_columns([
+            pl.col("arealtype").str.strip_chars(),
+            pl.col("regnskapstema").str.strip_chars(),
+            pl.col("naturkvalitet_nivå").str.strip_chars()
+        ])
+    )
+
+    #joiner relevante data fra csv filene til hovedtabellen (dvs. den med delområder)
+    joined_df = delområder_df.join(
+        naturkvalitet_df,
+        on=["arealtype", "regnskapstema", "naturkvalitet_nivå"], 
+        how="left"
+    )
+
+    naturregnskaps_data_df = joined_df.join(
+        forvaltnings_interesse_df,
+        on=["arealtype", "regnskapstema", "forvaltningsinteresse_nivå"],
+        how="left"
+    )
+
     return
 
 
-@app.cell(column=2)
+@app.cell(column=2, hide_code=True)
 def _(mo):
     mo.md(r"""## Utility functions""")
+    return
+
+
+@app.cell
+def _(pl):
+    # naturpoeng før funksjon
+
+    def calculate_naturpoeng_for_inngrep(df: pl.DataFrame) -> pl.DataFrame:
+          """
+          Calculate Naturpoeng (før inngrep) for each row.
+
+          Formula: utstrekning_for_inngrep × naturkvalitet_verdi × forvaltningsinteresse_verdi
+
+          Args:
+              df: DataFrame with columns 'utstrekning_for_inngrep', 'naturkvalitet_verdi', 'forvaltningsinteresse_verdi'
+
+          Returns:
+              DataFrame with added 'naturpoeng_for_inngrep' column
+          """
+          return df.with_columns([
+              (pl.col("utstrekning_for_inngrep").cast(pl.Float64) *
+               pl.col("naturkvalitet_verdi").cast(pl.Float64) *
+               pl.col("forvaltningsinteresse_verdi").cast(pl.Float64)).alias("naturpoeng_for_inngrep")
+          ])
     return
 
 
