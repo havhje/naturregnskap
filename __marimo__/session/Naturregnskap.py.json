@@ -5,117 +5,117 @@
   },
   "cells": [
     {
+      "id": "emfo",
+      "code_hash": "36e72c9b99abb07867d1486397880791",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "wqDd",
+      "code_hash": "2ce75d2afd78411bf94078eef38ffa62",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"input-pt-syntetisk-datasett\">Input: P.t. syntetisk datasett</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "b3f4ea7adf60cb6cecf9c75468ed7db1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='Hstk-0' random-id='25bc076a-1486-c092-2363-8dfedfacbff6'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;delomr&#92;&#92;u00e5de&#92;&quot;:&#92;&quot;A&#92;&quot;,&#92;&quot;utstrekning_for_inngrep&#92;&quot;:1.5,&#92;&quot;arealtype&#92;&quot;:&#92;&quot;Verneomr&#92;&#92;u00e5der&#92;&quot;,&#92;&quot;regnskapstema&#92;&quot;:&#92;&quot;&#92;&#92;u00d8kosystemareal&#92;&quot;,&#92;&quot;naturkvalitet_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;h&#92;&#92;u00f8yeste kvalitet&#92;&quot;,&#92;&quot;forvaltningsinteresse_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Vernet&#92;&quot;,&#92;&quot;tapt_utstrekning&#92;&quot;:0.5,&#92;&quot;resterende_utstrekning&#92;&quot;:1.0,&#92;&quot;p&#92;&#92;u00e5virkning&#92;&quot;:&#92;&quot;Noe forringet&#92;&quot;,&#92;&quot;utstrekning_etter_tiltak&#92;&quot;:2.0,&#92;&quot;m&#92;&#92;u00e5l_naturkvalitet_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;h&#92;&#92;u00f8yeste kvalitet&#92;&quot;,&#92;&quot;forvaltningsinteresse_skapt_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Vernet&#92;&quot;,&#92;&quot;avstand fra inngrep&#92;&quot;:&#92;&quot;Innenfor prosjektomr&#92;&#92;u00e5det + buffersone p&#92;&#92;u00e5 2 km&#92;&quot;,&#92;&quot;Tidsperspektiv&#92;&quot;:&#92;&quot;Opptil 5 &#92;&#92;u00e5r&#92;&quot;,&#92;&quot;vanskelighetsgrad&#92;&quot;:&#92;&quot;Lav vanskelighetsgrad&#92;&quot;,&#92;&quot;utstrekning_f&#92;&#92;u00f8r_tiltak_offsite&#92;&quot;:1.2},{&#92;&quot;delomr&#92;&#92;u00e5de&#92;&quot;:&#92;&quot;B&#92;&quot;,&#92;&quot;utstrekning_for_inngrep&#92;&quot;:25.3,&#92;&quot;arealtype&#92;&quot;:&#92;&quot;Funksjonsomr&#92;&#92;u00e5der for arter av nasjonal forvaltningsinteresse&#92;&quot;,&#92;&quot;regnskapstema&#92;&quot;:&#92;&quot;&#92;&#92;u00d8kologiske funksjonsomr&#92;&#92;u00e5der&#92;&quot;,&#92;&quot;naturkvalitet_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Sv&#92;&#92;u00e6rt h&#92;&#92;u00f8y kvalitet&#92;&quot;,&#92;&quot;forvaltningsinteresse_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;VU&#92;&quot;,&#92;&quot;tapt_utstrekning&#92;&quot;:5.0,&#92;&quot;resterende_utstrekning&#92;&quot;:20.3,&#92;&quot;p&#92;&#92;u00e5virkning&#92;&quot;:&#92;&quot;Forringet&#92;&quot;,&#92;&quot;utstrekning_etter_tiltak&#92;&quot;:30.0,&#92;&quot;m&#92;&#92;u00e5l_naturkvalitet_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Sv&#92;&#92;u00e6rt h&#92;&#92;u00f8y kvalitet&#92;&quot;,&#92;&quot;forvaltningsinteresse_skapt_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;VU&#92;&quot;,&#92;&quot;avstand fra inngrep&#92;&quot;:&#92;&quot;I direkte n&#92;&#92;u00e6rhet til prosjektomr&#92;&#92;u00e5de (utenfor buffersone, men innen radius 20 km)&#92;&quot;,&#92;&quot;Tidsperspektiv&#92;&quot;:&#92;&quot;5 til 10 &#92;&#92;u00e5r&#92;&quot;,&#92;&quot;vanskelighetsgrad&#92;&quot;:&#92;&quot;Middels vanskelighetsgrad&#92;&quot;,&#92;&quot;utstrekning_f&#92;&#92;u00f8r_tiltak_offsite&#92;&quot;:22.0},{&#92;&quot;delomr&#92;&#92;u00e5de&#92;&quot;:&#92;&quot;C&#92;&quot;,&#92;&quot;utstrekning_for_inngrep&#92;&quot;:5.7,&#92;&quot;arealtype&#92;&quot;:&#92;&quot;Vannforekomster inkl. tilh&#92;&#92;u00f8rende funksjonsomr&#92;&#92;u00e5der for vannlevende organismer&#92;&quot;,&#92;&quot;regnskapstema&#92;&quot;:&#92;&quot;Vannforekomster&#92;&quot;,&#92;&quot;naturkvalitet_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Moderat kvalitet&#92;&quot;,&#92;&quot;forvaltningsinteresse_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Vassdrag med fiskebestander av regional/lokal verdi&#92;&quot;,&#92;&quot;tapt_utstrekning&#92;&quot;:1.2,&#92;&quot;resterende_utstrekning&#92;&quot;:4.5,&#92;&quot;p&#92;&#92;u00e5virkning&#92;&quot;:&#92;&quot;Ubetydelig endring&#92;&quot;,&#92;&quot;utstrekning_etter_tiltak&#92;&quot;:8.0,&#92;&quot;m&#92;&#92;u00e5l_naturkvalitet_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;H&#92;&#92;u00f8y kvalitet&#92;&quot;,&#92;&quot;forvaltningsinteresse_skapt_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Vassdrag med fiskebestander av regional/lokal verdi&#92;&quot;,&#92;&quot;avstand fra inngrep&#92;&quot;:&#92;&quot;Utenfor prosjektomr&#92;&#92;u00e5de, men i samme bioklimatiske sone&#92;&quot;,&#92;&quot;Tidsperspektiv&#92;&quot;:&#92;&quot;10 til 20 &#92;&#92;u00e5r&#92;&quot;,&#92;&quot;vanskelighetsgrad&#92;&quot;:&#92;&quot;H&#92;&#92;u00f8y vanskelighetsgrad&#92;&quot;,&#92;&quot;utstrekning_f&#92;&#92;u00f8r_tiltak_offsite&#92;&quot;:4.8}]&quot;' data-total-rows='3' data-total-columns='16' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;delomr&#92;u00e5de&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;utstrekning_for_inngrep&quot;, [&quot;number&quot;, &quot;f64&quot;]], [&quot;arealtype&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;regnskapstema&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;naturkvalitet_niv&#92;u00e5&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;forvaltningsinteresse_niv&#92;u00e5&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;tapt_utstrekning&quot;, [&quot;number&quot;, &quot;f64&quot;]], [&quot;resterende_utstrekning&quot;, [&quot;number&quot;, &quot;f64&quot;]], [&quot;p&#92;u00e5virkning&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;utstrekning_etter_tiltak&quot;, [&quot;number&quot;, &quot;f64&quot;]], [&quot;m&#92;u00e5l_naturkvalitet_niv&#92;u00e5&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;forvaltningsinteresse_skapt_niv&#92;u00e5&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;avstand fra inngrep&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;Tidsperspektiv&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;vanskelighetsgrad&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;utstrekning_f&#92;u00f8r_tiltak_offsite&quot;, [&quot;number&quot;, &quot;f64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Rvje",
+      "code_hash": "6db6b3a4d27256446a70367015efdab9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"ferdige-beregninger-output-datasett\">Ferdige beregninger (output datasett)</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ulZA",
+      "code_hash": "f6b1bddf30d3c0ba95b9be1620818a24",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='ulZA-0' random-id='1914ac13-968a-b2e1-e358-88a62fe1db28'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;delomr&#92;&#92;u00e5de&#92;&quot;:&#92;&quot;A&#92;&quot;,&#92;&quot;utstrekning_for_inngrep&#92;&quot;:1.5,&#92;&quot;arealtype&#92;&quot;:&#92;&quot;Verneomr&#92;&#92;u00e5der&#92;&quot;,&#92;&quot;regnskapstema&#92;&quot;:&#92;&quot;&#92;&#92;u00d8kosystemareal&#92;&quot;,&#92;&quot;naturkvalitet_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;h&#92;&#92;u00f8yeste kvalitet&#92;&quot;,&#92;&quot;forvaltningsinteresse_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Vernet&#92;&quot;,&#92;&quot;tapt_utstrekning&#92;&quot;:0.5,&#92;&quot;resterende_utstrekning&#92;&quot;:1.0,&#92;&quot;p&#92;&#92;u00e5virkning&#92;&quot;:&#92;&quot;Noe forringet&#92;&quot;,&#92;&quot;utstrekning_etter_tiltak&#92;&quot;:2.0,&#92;&quot;m&#92;&#92;u00e5l_naturkvalitet_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;h&#92;&#92;u00f8yeste kvalitet&#92;&quot;,&#92;&quot;forvaltningsinteresse_skapt_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Vernet&#92;&quot;,&#92;&quot;avstand fra inngrep&#92;&quot;:&#92;&quot;Innenfor prosjektomr&#92;&#92;u00e5det + buffersone p&#92;&#92;u00e5 2 km&#92;&quot;,&#92;&quot;Tidsperspektiv&#92;&quot;:&#92;&quot;Opptil 5 &#92;&#92;u00e5r&#92;&quot;,&#92;&quot;vanskelighetsgrad&#92;&quot;:&#92;&quot;Lav vanskelighetsgrad&#92;&quot;,&#92;&quot;utstrekning_f&#92;&#92;u00f8r_tiltak_offsite&#92;&quot;:1.2,&#92;&quot;naturkvalitet_verdi&#92;&quot;:&#92;&quot;5.0&#92;&quot;,&#92;&quot;naturkvalitet_definisjon&#92;&quot;:&#92;&quot;Som en f&#92;&#92;u00f8lge av at verneomr&#92;&#92;u00e5der per definisjon har h&#92;&#92;u00f8yeste forvaltningsprioritet gis ingen faglig vurdering av naturkvaliteten innenfor vernegrensene &#92;&#92;u2013 isteden tilordnes all vernet natur h&#92;&#92;u00f8yeste kvalitetsklasse. &#92;&quot;,&#92;&quot;forvaltningsinteresse_verdi&#92;&quot;:5,&#92;&quot;m&#92;&#92;u00e5l_naturkvalitet_verdi&#92;&quot;:&#92;&quot;5.0&#92;&quot;,&#92;&quot;forvaltningsinteresse_skapt_verdi&#92;&quot;:5,&#92;&quot;risikofaktor_avstand fra inngrep&#92;&quot;:&#92;&quot;1.0&#92;&quot;,&#92;&quot;p&#92;&#92;u00e5virkning_verdi&#92;&quot;:&#92;&quot;0.5&#92;&quot;,&#92;&quot;risikofaktor_tidsperspektiv&#92;&quot;:&#92;&quot;0.9&#92;&quot;,&#92;&quot;risikofaktor_vanskelighetsgrad&#92;&quot;:&#92;&quot;1.0&#92;&quot;,&#92;&quot;naturpoeng_for_inngrep&#92;&quot;:37.5,&#92;&quot;naturpoeng_tapt&#92;&quot;:25.0,&#92;&quot;naturpoeng_skapt_onsite&#92;&quot;:45.0,&#92;&quot;naturpoeng_skapt_offsite&#92;&quot;:18.0,&#92;&quot;total_naturpoeng_f&#92;&#92;u00f8r&#92;&quot;:366.18,&#92;&quot;total_naturpoeng_tapt&#92;&quot;:277.93000000000006,&#92;&quot;total_naturpoeng_skapt&#92;&quot;:229.5756,&#92;&quot;total_endring&#92;&quot;:317.8255999999999},{&#92;&quot;delomr&#92;&#92;u00e5de&#92;&quot;:&#92;&quot;B&#92;&quot;,&#92;&quot;utstrekning_for_inngrep&#92;&quot;:25.3,&#92;&quot;arealtype&#92;&quot;:&#92;&quot;Funksjonsomr&#92;&#92;u00e5der for arter av nasjonal forvaltningsinteresse&#92;&quot;,&#92;&quot;regnskapstema&#92;&quot;:&#92;&quot;&#92;&#92;u00d8kologiske funksjonsomr&#92;&#92;u00e5der&#92;&quot;,&#92;&quot;naturkvalitet_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Sv&#92;&#92;u00e6rt h&#92;&#92;u00f8y kvalitet&#92;&quot;,&#92;&quot;forvaltningsinteresse_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;VU&#92;&quot;,&#92;&quot;tapt_utstrekning&#92;&quot;:5.0,&#92;&quot;resterende_utstrekning&#92;&quot;:20.3,&#92;&quot;p&#92;&#92;u00e5virkning&#92;&quot;:&#92;&quot;Forringet&#92;&quot;,&#92;&quot;utstrekning_etter_tiltak&#92;&quot;:30.0,&#92;&quot;m&#92;&#92;u00e5l_naturkvalitet_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Sv&#92;&#92;u00e6rt h&#92;&#92;u00f8y kvalitet&#92;&quot;,&#92;&quot;forvaltningsinteresse_skapt_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;VU&#92;&quot;,&#92;&quot;avstand fra inngrep&#92;&quot;:&#92;&quot;I direkte n&#92;&#92;u00e6rhet til prosjektomr&#92;&#92;u00e5de (utenfor buffersone, men innen radius 20 km)&#92;&quot;,&#92;&quot;Tidsperspektiv&#92;&quot;:&#92;&quot;5 til 10 &#92;&#92;u00e5r&#92;&quot;,&#92;&quot;vanskelighetsgrad&#92;&quot;:&#92;&quot;Middels vanskelighetsgrad&#92;&quot;,&#92;&quot;utstrekning_f&#92;&#92;u00f8r_tiltak_offsite&#92;&quot;:22.0,&#92;&quot;naturkvalitet_verdi&#92;&quot;:&#92;&quot;4.0&#92;&quot;,&#92;&quot;naturkvalitet_definisjon&#92;&quot;:&#92;&quot;De biotiske og abiotiske egenskapene i det vurderte arealet er n&#92;&#92;u00e6r ideelle for &#92;&#92;u00e5 underst&#92;&#92;u00f8tte viktige artsfunksjoner. Denne sv&#92;&#92;u00e6rt gode ressurssituasjonen f&#92;&#92;u00f8rer til fast bruk og/eller store antall av art(er) innen &#92;&#92;u00e9n eller flere artsgrupper&#92;&quot;,&#92;&quot;forvaltningsinteresse_verdi&#92;&quot;:3,&#92;&quot;m&#92;&#92;u00e5l_naturkvalitet_verdi&#92;&quot;:&#92;&quot;4.0&#92;&quot;,&#92;&quot;forvaltningsinteresse_skapt_verdi&#92;&quot;:3,&#92;&quot;risikofaktor_avstand fra inngrep&#92;&quot;:&#92;&quot;0.75&#92;&quot;,&#92;&quot;p&#92;&#92;u00e5virkning_verdi&#92;&quot;:&#92;&quot;0.75&#92;&quot;,&#92;&quot;risikofaktor_tidsperspektiv&#92;&quot;:&#92;&quot;0.7&#92;&quot;,&#92;&quot;risikofaktor_vanskelighetsgrad&#92;&quot;:&#92;&quot;0.67&#92;&quot;,&#92;&quot;naturpoeng_for_inngrep&#92;&quot;:303.6,&#92;&quot;naturpoeng_tapt&#92;&quot;:242.70000000000002,&#92;&quot;naturpoeng_skapt_onsite&#92;&quot;:126.63000000000001,&#92;&quot;naturpoeng_skapt_offsite&#92;&quot;:33.768,&#92;&quot;total_naturpoeng_f&#92;&#92;u00f8r&#92;&quot;:366.18,&#92;&quot;total_naturpoeng_tapt&#92;&quot;:277.93000000000006,&#92;&quot;total_naturpoeng_skapt&#92;&quot;:229.5756,&#92;&quot;total_endring&#92;&quot;:317.8255999999999},{&#92;&quot;delomr&#92;&#92;u00e5de&#92;&quot;:&#92;&quot;C&#92;&quot;,&#92;&quot;utstrekning_for_inngrep&#92;&quot;:5.7,&#92;&quot;arealtype&#92;&quot;:&#92;&quot;Vannforekomster inkl. tilh&#92;&#92;u00f8rende funksjonsomr&#92;&#92;u00e5der for vannlevende organismer&#92;&quot;,&#92;&quot;regnskapstema&#92;&quot;:&#92;&quot;Vannforekomster&#92;&quot;,&#92;&quot;naturkvalitet_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Moderat kvalitet&#92;&quot;,&#92;&quot;forvaltningsinteresse_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Vassdrag med fiskebestander av regional/lokal verdi&#92;&quot;,&#92;&quot;tapt_utstrekning&#92;&quot;:1.2,&#92;&quot;resterende_utstrekning&#92;&quot;:4.5,&#92;&quot;p&#92;&#92;u00e5virkning&#92;&quot;:&#92;&quot;Ubetydelig endring&#92;&quot;,&#92;&quot;utstrekning_etter_tiltak&#92;&quot;:8.0,&#92;&quot;m&#92;&#92;u00e5l_naturkvalitet_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;H&#92;&#92;u00f8y kvalitet&#92;&quot;,&#92;&quot;forvaltningsinteresse_skapt_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Vassdrag med fiskebestander av regional/lokal verdi&#92;&quot;,&#92;&quot;avstand fra inngrep&#92;&quot;:&#92;&quot;Utenfor prosjektomr&#92;&#92;u00e5de, men i samme bioklimatiske sone&#92;&quot;,&#92;&quot;Tidsperspektiv&#92;&quot;:&#92;&quot;10 til 20 &#92;&#92;u00e5r&#92;&quot;,&#92;&quot;vanskelighetsgrad&#92;&quot;:&#92;&quot;H&#92;&#92;u00f8y vanskelighetsgrad&#92;&quot;,&#92;&quot;utstrekning_f&#92;&#92;u00f8r_tiltak_offsite&#92;&quot;:4.8,&#92;&quot;naturkvalitet_verdi&#92;&quot;:&#92;&quot;2.2&#92;&quot;,&#92;&quot;naturkvalitet_definisjon&#92;&quot;:&#92;&quot;Moderat &#92;&#92;u00f8kologisk tilstand (Vann-Nett)&#92;&quot;,&#92;&quot;forvaltningsinteresse_verdi&#92;&quot;:2,&#92;&quot;m&#92;&#92;u00e5l_naturkvalitet_verdi&#92;&quot;:&#92;&quot;3.0&#92;&quot;,&#92;&quot;forvaltningsinteresse_skapt_verdi&#92;&quot;:2,&#92;&quot;risikofaktor_avstand fra inngrep&#92;&quot;:&#92;&quot;0.5&#92;&quot;,&#92;&quot;p&#92;&#92;u00e5virkning_verdi&#92;&quot;:&#92;&quot;0.25&#92;&quot;,&#92;&quot;risikofaktor_tidsperspektiv&#92;&quot;:&#92;&quot;0.5&#92;&quot;,&#92;&quot;risikofaktor_vanskelighetsgrad&#92;&quot;:&#92;&quot;0.33&#92;&quot;,&#92;&quot;naturpoeng_for_inngrep&#92;&quot;:25.080000000000002,&#92;&quot;naturpoeng_tapt&#92;&quot;:10.23,&#92;&quot;naturpoeng_skapt_onsite&#92;&quot;:3.96,&#92;&quot;naturpoeng_skapt_offsite&#92;&quot;:2.2176,&#92;&quot;total_naturpoeng_f&#92;&#92;u00f8r&#92;&quot;:366.18,&#92;&quot;total_naturpoeng_tapt&#92;&quot;:277.93000000000006,&#92;&quot;total_naturpoeng_skapt&#92;&quot;:229.5756,&#92;&quot;total_endring&#92;&quot;:317.8255999999999}]&quot;' data-total-rows='3' data-total-columns='33' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;delomr&#92;u00e5de&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;utstrekning_for_inngrep&quot;, [&quot;number&quot;, &quot;f64&quot;]], [&quot;arealtype&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;regnskapstema&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;naturkvalitet_niv&#92;u00e5&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;forvaltningsinteresse_niv&#92;u00e5&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;tapt_utstrekning&quot;, [&quot;number&quot;, &quot;f64&quot;]], [&quot;resterende_utstrekning&quot;, [&quot;number&quot;, &quot;f64&quot;]], [&quot;p&#92;u00e5virkning&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;utstrekning_etter_tiltak&quot;, [&quot;number&quot;, &quot;f64&quot;]], [&quot;m&#92;u00e5l_naturkvalitet_niv&#92;u00e5&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;forvaltningsinteresse_skapt_niv&#92;u00e5&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;avstand fra inngrep&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;Tidsperspektiv&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;vanskelighetsgrad&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;utstrekning_f&#92;u00f8r_tiltak_offsite&quot;, [&quot;number&quot;, &quot;f64&quot;]], [&quot;naturkvalitet_verdi&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;naturkvalitet_definisjon&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;forvaltningsinteresse_verdi&quot;, [&quot;integer&quot;, &quot;i64&quot;]], [&quot;m&#92;u00e5l_naturkvalitet_verdi&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;forvaltningsinteresse_skapt_verdi&quot;, [&quot;integer&quot;, &quot;i64&quot;]], [&quot;risikofaktor_avstand fra inngrep&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;p&#92;u00e5virkning_verdi&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;risikofaktor_tidsperspektiv&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;risikofaktor_vanskelighetsgrad&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;naturpoeng_for_inngrep&quot;, [&quot;number&quot;, &quot;f64&quot;]], [&quot;naturpoeng_tapt&quot;, [&quot;number&quot;, &quot;f64&quot;]], [&quot;naturpoeng_skapt_onsite&quot;, [&quot;number&quot;, &quot;f64&quot;]], [&quot;naturpoeng_skapt_offsite&quot;, [&quot;number&quot;, &quot;f64&quot;]], [&quot;total_naturpoeng_f&#92;u00f8r&quot;, [&quot;number&quot;, &quot;f64&quot;]], [&quot;total_naturpoeng_tapt&quot;, [&quot;number&quot;, &quot;f64&quot;]], [&quot;total_naturpoeng_skapt&quot;, [&quot;number&quot;, &quot;f64&quot;]], [&quot;total_endring&quot;, [&quot;number&quot;, &quot;f64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "UZEb",
+      "code_hash": "fb8133fb1ddbd64c1c1092a23ec1899b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"data-pipeline\">Data pipeline</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "9945a1b23c724a906a11ab898f104833",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "iLit",
+      "code_hash": "5fbc4aada54bbf1be3d53f285912ebd9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='iLit-0' random-id='640a27da-d0b3-88d7-5e59-f437692012a1'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;delomr&#92;&#92;u00e5de&#92;&quot;:&#92;&quot;A&#92;&quot;,&#92;&quot;utstrekning_for_inngrep&#92;&quot;:1.5,&#92;&quot;arealtype&#92;&quot;:&#92;&quot;Verneomr&#92;&#92;u00e5der&#92;&quot;,&#92;&quot;regnskapstema&#92;&quot;:&#92;&quot;&#92;&#92;u00d8kosystemareal&#92;&quot;,&#92;&quot;naturkvalitet_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;h&#92;&#92;u00f8yeste kvalitet&#92;&quot;,&#92;&quot;forvaltningsinteresse_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Vernet&#92;&quot;,&#92;&quot;tapt_utstrekning&#92;&quot;:0.5,&#92;&quot;resterende_utstrekning&#92;&quot;:1.0,&#92;&quot;p&#92;&#92;u00e5virkning&#92;&quot;:&#92;&quot;Noe forringet&#92;&quot;,&#92;&quot;utstrekning_etter_tiltak&#92;&quot;:2.0,&#92;&quot;m&#92;&#92;u00e5l_naturkvalitet_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;h&#92;&#92;u00f8yeste kvalitet&#92;&quot;,&#92;&quot;forvaltningsinteresse_skapt_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Vernet&#92;&quot;,&#92;&quot;avstand fra inngrep&#92;&quot;:&#92;&quot;Innenfor prosjektomr&#92;&#92;u00e5det + buffersone p&#92;&#92;u00e5 2 km&#92;&quot;,&#92;&quot;Tidsperspektiv&#92;&quot;:&#92;&quot;Opptil 5 &#92;&#92;u00e5r&#92;&quot;,&#92;&quot;vanskelighetsgrad&#92;&quot;:&#92;&quot;Lav vanskelighetsgrad&#92;&quot;,&#92;&quot;utstrekning_f&#92;&#92;u00f8r_tiltak_offsite&#92;&quot;:1.2,&#92;&quot;naturkvalitet_verdi&#92;&quot;:&#92;&quot;5.0&#92;&quot;,&#92;&quot;naturkvalitet_definisjon&#92;&quot;:&#92;&quot;Som en f&#92;&#92;u00f8lge av at verneomr&#92;&#92;u00e5der per definisjon har h&#92;&#92;u00f8yeste forvaltningsprioritet gis ingen faglig vurdering av naturkvaliteten innenfor vernegrensene &#92;&#92;u2013 isteden tilordnes all vernet natur h&#92;&#92;u00f8yeste kvalitetsklasse. &#92;&quot;,&#92;&quot;forvaltningsinteresse_verdi&#92;&quot;:5,&#92;&quot;m&#92;&#92;u00e5l_naturkvalitet_verdi&#92;&quot;:&#92;&quot;5.0&#92;&quot;,&#92;&quot;forvaltningsinteresse_skapt_verdi&#92;&quot;:5,&#92;&quot;risikofaktor_avstand fra inngrep&#92;&quot;:&#92;&quot;1.0&#92;&quot;,&#92;&quot;p&#92;&#92;u00e5virkning_verdi&#92;&quot;:&#92;&quot;0.5&#92;&quot;,&#92;&quot;risikofaktor_tidsperspektiv&#92;&quot;:&#92;&quot;0.9&#92;&quot;,&#92;&quot;risikofaktor_vanskelighetsgrad&#92;&quot;:&#92;&quot;1.0&#92;&quot;},{&#92;&quot;delomr&#92;&#92;u00e5de&#92;&quot;:&#92;&quot;B&#92;&quot;,&#92;&quot;utstrekning_for_inngrep&#92;&quot;:25.3,&#92;&quot;arealtype&#92;&quot;:&#92;&quot;Funksjonsomr&#92;&#92;u00e5der for arter av nasjonal forvaltningsinteresse&#92;&quot;,&#92;&quot;regnskapstema&#92;&quot;:&#92;&quot;&#92;&#92;u00d8kologiske funksjonsomr&#92;&#92;u00e5der&#92;&quot;,&#92;&quot;naturkvalitet_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Sv&#92;&#92;u00e6rt h&#92;&#92;u00f8y kvalitet&#92;&quot;,&#92;&quot;forvaltningsinteresse_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;VU&#92;&quot;,&#92;&quot;tapt_utstrekning&#92;&quot;:5.0,&#92;&quot;resterende_utstrekning&#92;&quot;:20.3,&#92;&quot;p&#92;&#92;u00e5virkning&#92;&quot;:&#92;&quot;Forringet&#92;&quot;,&#92;&quot;utstrekning_etter_tiltak&#92;&quot;:30.0,&#92;&quot;m&#92;&#92;u00e5l_naturkvalitet_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Sv&#92;&#92;u00e6rt h&#92;&#92;u00f8y kvalitet&#92;&quot;,&#92;&quot;forvaltningsinteresse_skapt_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;VU&#92;&quot;,&#92;&quot;avstand fra inngrep&#92;&quot;:&#92;&quot;I direkte n&#92;&#92;u00e6rhet til prosjektomr&#92;&#92;u00e5de (utenfor buffersone, men innen radius 20 km)&#92;&quot;,&#92;&quot;Tidsperspektiv&#92;&quot;:&#92;&quot;5 til 10 &#92;&#92;u00e5r&#92;&quot;,&#92;&quot;vanskelighetsgrad&#92;&quot;:&#92;&quot;Middels vanskelighetsgrad&#92;&quot;,&#92;&quot;utstrekning_f&#92;&#92;u00f8r_tiltak_offsite&#92;&quot;:22.0,&#92;&quot;naturkvalitet_verdi&#92;&quot;:&#92;&quot;4.0&#92;&quot;,&#92;&quot;naturkvalitet_definisjon&#92;&quot;:&#92;&quot;De biotiske og abiotiske egenskapene i det vurderte arealet er n&#92;&#92;u00e6r ideelle for &#92;&#92;u00e5 underst&#92;&#92;u00f8tte viktige artsfunksjoner. Denne sv&#92;&#92;u00e6rt gode ressurssituasjonen f&#92;&#92;u00f8rer til fast bruk og/eller store antall av art(er) innen &#92;&#92;u00e9n eller flere artsgrupper&#92;&quot;,&#92;&quot;forvaltningsinteresse_verdi&#92;&quot;:3,&#92;&quot;m&#92;&#92;u00e5l_naturkvalitet_verdi&#92;&quot;:&#92;&quot;4.0&#92;&quot;,&#92;&quot;forvaltningsinteresse_skapt_verdi&#92;&quot;:3,&#92;&quot;risikofaktor_avstand fra inngrep&#92;&quot;:&#92;&quot;0.75&#92;&quot;,&#92;&quot;p&#92;&#92;u00e5virkning_verdi&#92;&quot;:&#92;&quot;0.75&#92;&quot;,&#92;&quot;risikofaktor_tidsperspektiv&#92;&quot;:&#92;&quot;0.7&#92;&quot;,&#92;&quot;risikofaktor_vanskelighetsgrad&#92;&quot;:&#92;&quot;0.67&#92;&quot;},{&#92;&quot;delomr&#92;&#92;u00e5de&#92;&quot;:&#92;&quot;C&#92;&quot;,&#92;&quot;utstrekning_for_inngrep&#92;&quot;:5.7,&#92;&quot;arealtype&#92;&quot;:&#92;&quot;Vannforekomster inkl. tilh&#92;&#92;u00f8rende funksjonsomr&#92;&#92;u00e5der for vannlevende organismer&#92;&quot;,&#92;&quot;regnskapstema&#92;&quot;:&#92;&quot;Vannforekomster&#92;&quot;,&#92;&quot;naturkvalitet_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Moderat kvalitet&#92;&quot;,&#92;&quot;forvaltningsinteresse_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Vassdrag med fiskebestander av regional/lokal verdi&#92;&quot;,&#92;&quot;tapt_utstrekning&#92;&quot;:1.2,&#92;&quot;resterende_utstrekning&#92;&quot;:4.5,&#92;&quot;p&#92;&#92;u00e5virkning&#92;&quot;:&#92;&quot;Ubetydelig endring&#92;&quot;,&#92;&quot;utstrekning_etter_tiltak&#92;&quot;:8.0,&#92;&quot;m&#92;&#92;u00e5l_naturkvalitet_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;H&#92;&#92;u00f8y kvalitet&#92;&quot;,&#92;&quot;forvaltningsinteresse_skapt_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Vassdrag med fiskebestander av regional/lokal verdi&#92;&quot;,&#92;&quot;avstand fra inngrep&#92;&quot;:&#92;&quot;Utenfor prosjektomr&#92;&#92;u00e5de, men i samme bioklimatiske sone&#92;&quot;,&#92;&quot;Tidsperspektiv&#92;&quot;:&#92;&quot;10 til 20 &#92;&#92;u00e5r&#92;&quot;,&#92;&quot;vanskelighetsgrad&#92;&quot;:&#92;&quot;H&#92;&#92;u00f8y vanskelighetsgrad&#92;&quot;,&#92;&quot;utstrekning_f&#92;&#92;u00f8r_tiltak_offsite&#92;&quot;:4.8,&#92;&quot;naturkvalitet_verdi&#92;&quot;:&#92;&quot;2.2&#92;&quot;,&#92;&quot;naturkvalitet_definisjon&#92;&quot;:&#92;&quot;Moderat &#92;&#92;u00f8kologisk tilstand (Vann-Nett)&#92;&quot;,&#92;&quot;forvaltningsinteresse_verdi&#92;&quot;:2,&#92;&quot;m&#92;&#92;u00e5l_naturkvalitet_verdi&#92;&quot;:&#92;&quot;3.0&#92;&quot;,&#92;&quot;forvaltningsinteresse_skapt_verdi&#92;&quot;:2,&#92;&quot;risikofaktor_avstand fra inngrep&#92;&quot;:&#92;&quot;0.5&#92;&quot;,&#92;&quot;p&#92;&#92;u00e5virkning_verdi&#92;&quot;:&#92;&quot;0.25&#92;&quot;,&#92;&quot;risikofaktor_tidsperspektiv&#92;&quot;:&#92;&quot;0.5&#92;&quot;,&#92;&quot;risikofaktor_vanskelighetsgrad&#92;&quot;:&#92;&quot;0.33&#92;&quot;}]&quot;' data-total-rows='3' data-total-columns='25' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;delomr&#92;u00e5de&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;utstrekning_for_inngrep&quot;, [&quot;number&quot;, &quot;f64&quot;]], [&quot;arealtype&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;regnskapstema&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;naturkvalitet_niv&#92;u00e5&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;forvaltningsinteresse_niv&#92;u00e5&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;tapt_utstrekning&quot;, [&quot;number&quot;, &quot;f64&quot;]], [&quot;resterende_utstrekning&quot;, [&quot;number&quot;, &quot;f64&quot;]], [&quot;p&#92;u00e5virkning&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;utstrekning_etter_tiltak&quot;, [&quot;number&quot;, &quot;f64&quot;]], [&quot;m&#92;u00e5l_naturkvalitet_niv&#92;u00e5&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;forvaltningsinteresse_skapt_niv&#92;u00e5&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;avstand fra inngrep&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;Tidsperspektiv&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;vanskelighetsgrad&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;utstrekning_f&#92;u00f8r_tiltak_offsite&quot;, [&quot;number&quot;, &quot;f64&quot;]], [&quot;naturkvalitet_verdi&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;naturkvalitet_definisjon&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;forvaltningsinteresse_verdi&quot;, [&quot;integer&quot;, &quot;i64&quot;]], [&quot;m&#92;u00e5l_naturkvalitet_verdi&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;forvaltningsinteresse_skapt_verdi&quot;, [&quot;integer&quot;, &quot;i64&quot;]], [&quot;risikofaktor_avstand fra inngrep&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;p&#92;u00e5virkning_verdi&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;risikofaktor_tidsperspektiv&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;risikofaktor_vanskelighetsgrad&quot;, [&quot;string&quot;, &quot;str&quot;]]]' data-show-filters='true' data-show-download='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "Hbol",
-      "code_hash": "2ede4b9a0d1850d1624a6a5547b8cb95",
+      "code_hash": "58bfc71643284f0c6a85784990eb0a9f",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h1 id=\"naturregnskap-metode\">Naturregnskap metode</h1></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "MJUe",
-      "code_hash": "1b48295397f6cbaaaa42922db38318c4",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h1 id=\"inndeling-av-naturmangfoldet\">Inndeling av naturmangfoldet</h1></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "vblA",
-      "code_hash": "9ec1a24a56b601e85e94255e129a2d05",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"kosystemareal\">\u00d8kosystemareal</h2></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "bkHC",
-      "code_hash": null,
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "lEQa",
-      "code_hash": null,
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "PKri",
-      "code_hash": null,
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "Xref",
-      "code_hash": null,
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "SFPL",
-      "code_hash": null,
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "BYtC",
-      "code_hash": null,
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"naturregnskap-metode\">Naturregnskap metode</h2></span>"
           }
         }
       ],
@@ -148,8 +148,21 @@
       "console": []
     },
     {
-      "id": "emfo",
-      "code_hash": "0a5b664f64c1f37429b3f1771e97ba62",
+      "id": "ZHCJ",
+      "code_hash": "9ea2e5bff746a42adf1524c7bd621a4d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"funksjoner-for-beregning-av-naturpoeng\">Funksjoner for beregning av naturpoeng</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ROlb",
+      "code_hash": "af1881b954d75ad3cff9806589eea613",
       "outputs": [
         {
           "type": "data",
@@ -161,21 +174,21 @@
       "console": []
     },
     {
-      "id": "viye",
-      "code_hash": "445c7b987d34ed82451e5a41163796da",
+      "id": "FYKa",
+      "code_hash": "43a9d055be41f97e32ce9b6cc0245dba",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<marimo-ui-element object-id='viye-0' random-id='7dadb0df-8686-d85f-1ebe-ddbf8c12d3f8'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;delomr&#92;&#92;u00e5de&#92;&quot;:&#92;&quot;A&#92;&quot;,&#92;&quot;utstrekning_for_inngrep&#92;&quot;:1.5,&#92;&quot;arealtype&#92;&quot;:&#92;&quot;Verneomr&#92;&#92;u00e5der&#92;&quot;,&#92;&quot;regnskapstema&#92;&quot;:&#92;&quot;&#92;&#92;u00d8kosystemareal&#92;&quot;,&#92;&quot;naturkvalitet_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;h&#92;&#92;u00f8yeste kvalitet&#92;&quot;,&#92;&quot;forvaltningsinteresse_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Vernet&#92;&quot;},{&#92;&quot;delomr&#92;&#92;u00e5de&#92;&quot;:&#92;&quot;B&#92;&quot;,&#92;&quot;utstrekning_for_inngrep&#92;&quot;:25.3,&#92;&quot;arealtype&#92;&quot;:&#92;&quot;Funksjonsomr&#92;&#92;u00e5der for arter av nasjonal forvaltningsinteresse&#92;&quot;,&#92;&quot;regnskapstema&#92;&quot;:&#92;&quot;&#92;&#92;u00d8kologiske funksjonsomr&#92;&#92;u00e5der&#92;&quot;,&#92;&quot;naturkvalitet_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Sv&#92;&#92;u00e6rt h&#92;&#92;u00f8y kvalitet&#92;&quot;,&#92;&quot;forvaltningsinteresse_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;VU&#92;&quot;},{&#92;&quot;delomr&#92;&#92;u00e5de&#92;&quot;:&#92;&quot;C&#92;&quot;,&#92;&quot;utstrekning_for_inngrep&#92;&quot;:5.7,&#92;&quot;arealtype&#92;&quot;:&#92;&quot;Vannforekomster inkl. tilh&#92;&#92;u00f8rende funksjonsomr&#92;&#92;u00e5der for vannlevende organismer&#92;&quot;,&#92;&quot;regnskapstema&#92;&quot;:&#92;&quot;Vannforekomster&#92;&quot;,&#92;&quot;naturkvalitet_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Moderat kvalitet&#92;&quot;,&#92;&quot;forvaltningsinteresse_niv&#92;&#92;u00e5&#92;&quot;:&#92;&quot;Vassdrag med fiskebestander av regional/lokal verdi&#92;&quot;}]&quot;' data-total-rows='3' data-total-columns='6' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;delomr&#92;u00e5de&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;utstrekning_for_inngrep&quot;, [&quot;number&quot;, &quot;f64&quot;]], [&quot;arealtype&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;regnskapstema&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;naturkvalitet_niv&#92;u00e5&quot;, [&quot;string&quot;, &quot;str&quot;]], [&quot;forvaltningsinteresse_niv&#92;u00e5&quot;, [&quot;string&quot;, &quot;str&quot;]]]' data-show-filters='true' data-show-download='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h1 id=\"formelen-er-feil-under-sjekk-alle-formler-opp-mot-rapporten\">Formelen er feil under. Sjekk alle formler opp mot rapporten.</h1></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "fUHD",
-      "code_hash": "93d63fa035e39bcccc58a31e897e582a",
+      "id": "qnkX",
+      "code_hash": "f93ee8788eccef20ba12f2c54f7b31d2",
       "outputs": [
         {
           "type": "data",
@@ -187,21 +200,8 @@
       "console": []
     },
     {
-      "id": "nWHF",
-      "code_hash": "f3ca6090bee6d392d5a3b2aa04cf978c",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"utility-functions\">Utility functions</h2></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "earh",
-      "code_hash": "39fe97059f5b3121a5a24e3b50381d4e",
+      "id": "TqIu",
+      "code_hash": "35196e9443716d608a4c1f42e05b4ce9",
       "outputs": [
         {
           "type": "data",
@@ -210,6 +210,70 @@
           }
         }
       ],
+      "console": []
+    },
+    {
+      "id": "Vxnm",
+      "code_hash": "59553b0c1e7fddf4f6a165f6950a2a06",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "DnEU",
+      "code_hash": "86e8c4373b16c271b44693fee6e40ba3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MxoC",
+      "code_hash": "39faa86215a2993b19b051379d462646",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"test\">Test</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ygWX",
+      "code_hash": "d495e7d2fae06d56a6d207d7b51305e8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u001b[32m.\u001b[0m\u001b[33m                                                                        [100%]\u001b[0m\n=================================== Overview ===================================\nPassed Tests:\n\u001b[1m\u001b[32m\u2713\u001b[0m\u001b[0m naturregnskap.py::test_naturpoeng_f\u00f8r\n\nSummary:\nTotal: 1, Passed: 1, Failed: 0, Errors: 0, Skipped: 0\n"
+        }
+      ]
+    },
+    {
+      "id": "reyx",
+      "code_hash": null,
+      "outputs": [],
       "console": []
     }
   ]
