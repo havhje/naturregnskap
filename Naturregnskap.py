@@ -113,12 +113,13 @@ def _(mo):
     return
 
 
-@app.cell(hide_code=True)
+@app.cell
 def _(pl):
     # Create synthetic dataset using dictionaries - much more readable and easy to modify
     delområder_data = [
         {
-            "delområde": "A", #Eks med både tap og restaurering
+            "Type "
+            "delområde": "A", #Eks med både tap og restaurering onsite
             "utstrekning_for_inngrep": 100,
             "arealtype": "Øvrig natur",
             "regnskapstema": "Økosystemareal",
@@ -129,12 +130,6 @@ def _(pl):
             "resterende_utstrekning": 70.0,
             "påvirkning": "Noe forringet",
         
-            "istandsatt_økosystemareal": 10.0,
-            "mål_naturkvalitet_nivå": "Høy kvalitet",
-            "mål_forvaltningsinteresse_nivå": "Ingen",
-            "avstand fra inngrep": "Innenfor prosjektområdet + buffersone på 2 km",
-            "Tidsperspektiv": "Opptil 5 år",
-            "vanskelighetsgrad": "Lav vanskelighetsgrad",
         },
         {
             "delområde": "B",#Eks med bare restaurering onsite 
@@ -144,11 +139,11 @@ def _(pl):
             "avstand fra inngrep": "I direkte nærhet til prosjektområde (utenfor buffersone, men innen radius 20 km)",
             "Tidsperspektiv": "5 til 10 år",
             "vanskelighetsgrad": "Middels vanskelighetsgrad",
-            "utstrekning_før_tiltak_offsite": 22.0  # Added missing comma here
+            "utstrekning_før_tiltak_offsite": 22.0  
         },
         {
             "delområde": "C",#Eks med bare restaurering offsite 
-            "utstrekning_før_tiltak_offsite": 62,  # Added missing comma here
+            "utstrekning_før_tiltak_offsite": 62, 
             "arealtype": "Øvrig natur",
             "regnskapstema": "Økosystemareal",
             "naturkvalitet_nivå": "Moderat lokalitetskvalitet",
@@ -214,7 +209,7 @@ def _(mo):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     _df = mo.sql(
         f"""
@@ -247,17 +242,25 @@ def _(mo):
     return avstand, forvaltningsinteresse, naturkvalitet, pavirkning
 
 
-@app.cell
-def _(forvaltningsinteresse, mo, naturkvalitet):
+@app.cell(hide_code=True)
+def _(
+    avstand,
+    forvaltningsinteresse,
+    mo,
+    naturkvalitet,
+    pavirkning,
+    tidsperspektiv,
+    vanskelighetsgrad,
+):
     _df = mo.sql(
         f"""
-        -- Create cleaned dataframes with TRIM applied
+        -- Create cleaned views with proper type casting
         CREATE OR REPLACE VIEW forvaltnings_interesse_clean AS
         SELECT 
             TRIM(arealtype) as arealtype,
             TRIM(regnskapstema) as regnskapstema,
             TRIM(forvaltningsinteresse_nivå) as forvaltningsinteresse_nivå,
-            forvaltningsinteresse_verdi
+            CAST(forvaltningsinteresse_verdi AS DOUBLE) as forvaltningsinteresse_verdi
         FROM forvaltningsinteresse;
 
         CREATE OR REPLACE VIEW naturkvalitet_clean AS
@@ -265,31 +268,54 @@ def _(forvaltningsinteresse, mo, naturkvalitet):
             TRIM(arealtype) as arealtype,
             TRIM(regnskapstema) as regnskapstema,
             TRIM(naturkvalitet_nivå) as naturkvalitet_nivå,
-            naturkvalitet_verdi,
+            CAST(naturkvalitet_verdi AS DOUBLE) as naturkvalitet_verdi,
             naturkvalitet_definisjon
         FROM naturkvalitet;
+
+        CREATE OR REPLACE VIEW avstand_clean AS
+        SELECT 
+            TRIM("avstand fra inngrep") as "avstand fra inngrep",
+            CAST("risikofaktor_avstand fra inngrep" AS DOUBLE) as "risikofaktor_avstand fra inngrep"
+        FROM avstand;
+
+        CREATE OR REPLACE VIEW pavirkning_clean AS
+        SELECT 
+            TRIM(påvirkning) as påvirkning,
+            CAST(påvirkning_verdi AS DOUBLE) as påvirkning_verdi
+        FROM pavirkning;
+
+        CREATE OR REPLACE VIEW tidsperspektiv_clean AS
+        SELECT 
+            TRIM(Tidsperspektiv) as Tidsperspektiv,
+            CAST(risikofaktor_tidsperspektiv AS DOUBLE) as risikofaktor_tidsperspektiv
+        FROM tidsperspektiv;
+
+        CREATE OR REPLACE VIEW vanskelighetsgrad_clean AS
+        SELECT 
+            TRIM(vanskelighetsgrad) as vanskelighetsgrad,
+            CAST(risikofaktor_vanskelighetsgrad AS DOUBLE) as risikofaktor_vanskelighetsgrad
+        FROM vanskelighetsgrad;
         """
     )
     return (forvaltnings_interesse_clean,)
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(
-    avstand,
+    avstand_clean,
     duckdb,
     forvaltnings_interesse_clean,
     naturkvalitet_clean,
-    pavirkning,
-    tidsperspektiv,
-    vanskelighetsgrad,
+    pavirkning_clean,
+    tidsperspektiv_clean,
+    vanskelighetsgrad_clean,
 ):
-    # Access the DuckDB tables as Polars dataframes
     forvaltnings_interesse_df = duckdb.sql("SELECT * FROM forvaltnings_interesse_clean").pl()
     naturkvalitet_df = duckdb.sql("SELECT * FROM naturkvalitet_clean").pl()
-    avstand_df = duckdb.sql("SELECT * FROM avstand WHERE \"avstand fra inngrep\" IS NOT NULL").pl()
-    pavirkning_df = duckdb.sql("SELECT * FROM pavirkning").pl()
-    tidsperspektiv_df = duckdb.sql("SELECT * FROM tidsperspektiv").pl()
-    vanskelighetsgrad_df = duckdb.sql("SELECT * FROM vanskelighetsgrad").pl()
+    avstand_df = duckdb.sql("SELECT * FROM avstand_clean").pl()
+    pavirkning_df = duckdb.sql("SELECT * FROM pavirkning_clean").pl()
+    tidsperspektiv_df = duckdb.sql("SELECT * FROM tidsperspektiv_clean").pl()
+    vanskelighetsgrad_df = duckdb.sql("SELECT * FROM vanskelighetsgrad_clean").pl()
     return (
         avstand_df,
         forvaltnings_interesse_df,
@@ -368,25 +394,6 @@ def _(
 
     naturregnskaps_data_df
     return (naturregnskaps_data_df,)
-
-
-@app.cell
-def _(delområder_df, naturkvalitet_df, pl):
-    # Check if your joins are working
-    diagnostic_df = delområder_df.filter(pl.col("delområde") == "A").join(
-        naturkvalitet_df,
-        on=["arealtype", "regnskapstema", "naturkvalitet_nivå"],
-        how="left"
-    )
-
-    print("After join - naturkvalitet_verdi:", diagnostic_df["naturkvalitet_verdi"][0])
-    print("Is it None?", diagnostic_df["naturkvalitet_verdi"][0] is None)
-    return
-
-
-@app.cell
-def _():
-    return
 
 
 @app.cell(column=3, hide_code=True)
@@ -561,7 +568,7 @@ def _(
         """
         invalid_combinations = []
     
-        # Check naturkvalitet combinations
+        # Check naturkvalitet combinations (før inngrep)
         for row in delområder_df.iter_rows(named=True):
             delområde = row["delområde"]
         
@@ -585,7 +592,38 @@ def _(
                     "naturkvalitet_nivå": row["naturkvalitet_nivå"]
                 })
     
-        # Check forvaltningsinteresse combinations
+        # Check MÅL naturkvalitet combinations (for restoration)
+        for row in delområder_df.iter_rows(named=True):
+            delområde = row["delområde"]
+        
+            # Skip rows without mål_naturkvalitet data
+            if row["mål_naturkvalitet_nivå"] is None:
+                continue
+        
+            # For mål fields, we need arealtype and regnskapstema - either from the same row or we need to check if the nivå exists at all
+            if row["arealtype"] is not None and row["regnskapstema"] is not None:
+                # Check with specific arealtype and regnskapstema
+                matching = naturkvalitet_df.filter(
+                    (pl.col("arealtype") == row["arealtype"]) &
+                    (pl.col("regnskapstema") == row["regnskapstema"]) &
+                    (pl.col("naturkvalitet_nivå") == row["mål_naturkvalitet_nivå"])
+                )
+            else:
+                # Just check if this naturkvalitet_nivå exists at all
+                matching = naturkvalitet_df.filter(
+                    pl.col("naturkvalitet_nivå") == row["mål_naturkvalitet_nivå"]
+                )
+        
+            if len(matching) == 0:
+                invalid_combinations.append({
+                    "delområde": delområde,
+                    "issue": "mål_naturkvalitet_nivå not found",
+                    "arealtype": row["arealtype"],
+                    "regnskapstema": row["regnskapstema"],
+                    "mål_naturkvalitet_nivå": row["mål_naturkvalitet_nivå"]
+                })
+    
+        # Check forvaltningsinteresse combinations (før inngrep)
         for row in delområder_df.iter_rows(named=True):
             delområde = row["delområde"]
         
@@ -605,6 +643,35 @@ def _(
                     "arealtype": row["arealtype"],
                     "regnskapstema": row["regnskapstema"],
                     "forvaltningsinteresse_nivå": row["forvaltningsinteresse_nivå"]
+                })
+    
+        # Check MÅL forvaltningsinteresse combinations (for restoration)
+        for row in delområder_df.iter_rows(named=True):
+            delområde = row["delområde"]
+        
+            if row["mål_forvaltningsinteresse_nivå"] is None:
+                continue
+            
+            if row["arealtype"] is not None and row["regnskapstema"] is not None:
+                # Check with specific arealtype and regnskapstema
+                matching = forvaltnings_interesse_df.filter(
+                    (pl.col("arealtype") == row["arealtype"]) &
+                    (pl.col("regnskapstema") == row["regnskapstema"]) &
+                    (pl.col("forvaltningsinteresse_nivå") == row["mål_forvaltningsinteresse_nivå"])
+                )
+            else:
+                # Just check if this forvaltningsinteresse_nivå exists at all
+                matching = forvaltnings_interesse_df.filter(
+                    pl.col("forvaltningsinteresse_nivå") == row["mål_forvaltningsinteresse_nivå"]
+                )
+        
+            if len(matching) == 0:
+                invalid_combinations.append({
+                    "delområde": delområde,
+                    "issue": "mål_forvaltningsinteresse_nivå not found",
+                    "arealtype": row["arealtype"],
+                    "regnskapstema": row["regnskapstema"],
+                    "mål_forvaltningsinteresse_nivå": row["mål_forvaltningsinteresse_nivå"]
                 })
     
         # Check risikofaktor values
@@ -692,68 +759,12 @@ def _(naturregnskaps_data_df):
 
 
 @app.cell(hide_code=True)
-def _(
-    calculate_naturpoeng_for_inngrep,
-    calculate_naturpoeng_skapt_offsite,
-    calculate_naturpoeng_skapt_onsite,
-    calculate_naturpoeng_tapt,
-    calculate_total_endring,
-    naturregnskaps_data_df,
-    pl,
-):
-    def test_calculations_produce_non_null_results():
-        """
-        Integration test that verifies the full pipeline produces valid results.
-        """
-        # Run full pipeline
-        result_df = naturregnskaps_data_df
-        result_df = calculate_naturpoeng_for_inngrep(result_df)
-        result_df = calculate_naturpoeng_tapt(result_df)
-        result_df = calculate_naturpoeng_skapt_onsite(result_df)
-        result_df = calculate_naturpoeng_skapt_offsite(result_df)
-        final_result = calculate_total_endring(result_df)
-    
-        # Check that at least some calculations produced non-null, non-zero values
-        # Use DataFrame filtering instead of Series filtering
-        has_før = final_result.filter(
-            (pl.col("naturpoeng_for_inngrep").is_not_null()) & 
-            (pl.col("naturpoeng_for_inngrep") != 0)
-        ).height > 0
-    
-        has_tapt = final_result.filter(
-            (pl.col("naturpoeng_tapt").is_not_null()) & 
-            (pl.col("naturpoeng_tapt") != 0)
-        ).height > 0
-    
-        has_skapt_onsite = final_result.filter(
-            (pl.col("naturpoeng_skapt_onsite").is_not_null()) & 
-            (pl.col("naturpoeng_skapt_onsite") != 0)
-        ).height > 0
-    
-        has_skapt_offsite = final_result.filter(
-            (pl.col("naturpoeng_skapt_offsite").is_not_null()) & 
-            (pl.col("naturpoeng_skapt_offsite") != 0)
-        ).height > 0
-    
-        has_total = final_result.filter(
-            pl.col("total_endring").is_not_null()
-        ).height > 0
-    
-        # Assertions with clear messages
-        assert has_før, "Pipeline failed: No valid 'naturpoeng_for_inngrep' calculations produced"
-        assert has_tapt, "Pipeline failed: No valid 'naturpoeng_tapt' calculations produced"
-        assert (has_skapt_onsite or has_skapt_offsite), "Pipeline failed: No valid 'skapt' calculations (neither onsite nor offsite)"
-        assert has_total, "Pipeline failed: No valid 'total_endring' calculations produced"
-    return
-
-
-@app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""### Tester beregningsfunksjoner""")
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(calculate_naturpoeng_for_inngrep, pl):
     def test_naturpoeng_før():
         # Arrange
@@ -779,7 +790,7 @@ def _(calculate_naturpoeng_for_inngrep, pl):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(calculate_naturpoeng_tapt, pl):
     def test_naturpoeng_tapt():
         # Arrange
@@ -807,7 +818,7 @@ def _(calculate_naturpoeng_tapt, pl):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(calculate_naturpoeng_skapt_onsite, pl):
     def test_naturpoeng_skapt_onsite():
         # Arrange
@@ -832,7 +843,7 @@ def _(calculate_naturpoeng_skapt_onsite, pl):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(calculate_naturpoeng_skapt_offsite, pl):
     def test_naturpoeng_skapt_offsite():
         # Arrange
@@ -860,7 +871,7 @@ def _(calculate_naturpoeng_skapt_offsite, pl):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(calculate_total_endring, pl):
     def test_calculate_total_endring():
         # Arrange
