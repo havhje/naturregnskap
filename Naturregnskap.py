@@ -4,7 +4,23 @@ __generated_with = "0.15.0"
 app = marimo.App(width="columns")
 
 
-@app.cell(column=0)
+@app.cell(column=0, hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    ### Ting du må huske på når du skal jobbe videre:
+
+    - Lage ett excelark med dropdown menyer for tillatte valg
+
+    - Men også lage en funksjon/sjekk som sjekker at påkrevde verdier for kalkuleringen er tilstandet når du importerer ett excel ark. F.eks. for at .join funksjonene skal funke så må alle rader ha: type, arealtype og regnskapstema. Dette for at man skal finne riktig verdi av naturkvalitet og forvaltnignsinteresse. Da det finnes unike kombinasjoner av disse. 
+
+
+    """
+    )
+    return
+
+
+@app.cell
 def _():
     import marimo as mo
     import polars as pl
@@ -183,7 +199,7 @@ def _(pl):
             "naturkvalitet_nivå": "Moderat lokalitetskvalitet",
             "forvaltningsinteresse_nivå": "Ingen",
 
-            "istandsatt_økosystemareal": 10.0,
+            "istandsatt_økosystemareal": 50.0,
             "mål_naturkvalitet_nivå": "Høy lokalitetskvalitet",
             "mål_forvaltningsinteresse_nivå": "Ingen",
             
@@ -235,12 +251,13 @@ def _(naturpoeng_tapt_df):
     ])
 
     naturpoeng_tapt_view
+
     return
 
 
 @app.cell(hide_code=True)
-def _(naturpoengskapt_restaurering_onsite_df):
-    naturpoeng_onsite_results = naturpoengskapt_restaurering_onsite_df.select([
+def _(naturpoeng_skapt_onsite_df):
+    naturpoeng_onsite_results = naturpoeng_skapt_onsite_df.select([
         "delområde",
         "type",
         "istandsatt_økosystemareal",
@@ -258,12 +275,13 @@ def _(naturpoengskapt_restaurering_onsite_df):
     ])
 
     naturpoeng_onsite_results
+
     return
 
 
 @app.cell(hide_code=True)
-def _(naturpoengskapt_restaurering_offsite_df):
-    naturpoeng_offsite_results = naturpoengskapt_restaurering_offsite_df.select([
+def _(naturpoeng_skapt_offsite_df):
+    naturpoeng_offsite_results = naturpoeng_skapt_offsite_df.select([
         "delområde",
         "type",
         "utstrekning_før_tiltak_offsite",
@@ -286,6 +304,30 @@ def _(naturpoengskapt_restaurering_offsite_df):
     ])
 
     naturpoeng_offsite_results
+
+    return
+
+
+@app.cell(hide_code=True)
+def _(
+    naturpoeng_skapt_offsite_df,
+    naturpoeng_skapt_onsite_df,
+    naturpoeng_tapt_df,
+    pl,
+):
+    # Calculate net change in one polars statement using the dataframes
+    naturpoeng_netto_df = (
+        pl.DataFrame({
+            "tapt": [naturpoeng_tapt_df["naturpoeng_tapt"].sum()],
+            "skapt_onsite": [naturpoeng_skapt_onsite_df["naturpoeng_skapt_onsite"].sum()],
+            "skapt_offsite": [naturpoeng_skapt_offsite_df["naturpoeng_skapt_offsite"].sum()]
+        })
+        .with_columns([
+            (-pl.col("tapt") + pl.col("skapt_onsite") + pl.col("skapt_offsite")).alias("netto_endring")
+        ])
+    )
+
+    naturpoeng_netto_df
     return
 
 
@@ -346,8 +388,6 @@ def _(calculate_naturpoeng_for_inngrep, påvirket_delområde_df):
 def _(calculate_naturpoeng_tapt, naturpoeng_for_inngrep):
     # Calculate naturpoeng tapt
     naturpoeng_tapt_df = calculate_naturpoeng_tapt(naturpoeng_for_inngrep)
-
-
     return (naturpoeng_tapt_df,)
 
 
@@ -420,8 +460,8 @@ def _(
 
 @app.cell
 def _(calculate_naturpoeng_skapt_onsite, restaurering_onsite_df):
-    naturpoengskapt_restaurering_onsite_df = calculate_naturpoeng_skapt_onsite(restaurering_onsite_df)
-    return (naturpoengskapt_restaurering_onsite_df,)
+    naturpoeng_skapt_onsite_df = calculate_naturpoeng_skapt_onsite(restaurering_onsite_df)
+    return (naturpoeng_skapt_onsite_df,)
 
 
 @app.cell(hide_code=True)
@@ -508,19 +548,8 @@ def _(
 
 @app.cell
 def _(calculate_naturpoeng_skapt_offsite, restaurering_offsite_df):
-    naturpoengskapt_restaurering_offsite_df = calculate_naturpoeng_skapt_offsite(restaurering_offsite_df)
-    return (naturpoengskapt_restaurering_offsite_df,)
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""## Samlet beregninger""")
-    return
-
-
-@app.cell
-def _():
-    return
+    naturpoeng_skapt_offsite_df = calculate_naturpoeng_skapt_offsite(restaurering_offsite_df)
+    return (naturpoeng_skapt_offsite_df,)
 
 
 @app.cell(column=3, hide_code=True)
@@ -640,29 +669,6 @@ def _(pl):
         ])
 
     return (calculate_naturpoeng_skapt_offsite,)
-
-
-@app.cell
-def _(pl):
-    def calculate_total_endring(df: pl.DataFrame) -> pl.DataFrame:
-        """
-        Calculate total endring for each row.
-
-        Formula: Total endring = Naturpoeng før - Naturpoeng tapt + Naturpoeng skapt onsite + Naturpoeng skapt offsite
-
-        Args:
-            df: DataFrame with all calculated naturpoeng columns
-
-        Returns:
-            DataFrame with all original columns plus total_endring per row
-        """
-        return df.with_columns([
-            (pl.col("naturpoeng_for_inngrep").fill_null(0) -
-             pl.col("naturpoeng_tapt").fill_null(0) +
-             pl.col("naturpoeng_skapt_onsite").fill_null(0) + 
-             pl.col("naturpoeng_skapt_offsite").fill_null(0)).alias("total_endring")
-        ])
-    return (calculate_total_endring,)
 
 
 @app.cell(column=4, hide_code=True)
@@ -939,29 +945,6 @@ def _(calculate_naturpoeng_skapt_offsite, pl):
         expected_value = ((10.0 * 5.0 * 3.0) - (6.0 * 4.0 * 2.0)) * (0.8 * 0.7 * 0.9)  # = (150 - 48) * 0.504 = 102 * 0.504 = 51.408
         actual_value = result_test_offsite["naturpoeng_skapt_offsite"][0]
 
-        assert abs(actual_value - expected_value) < 0.0001
-    return
-
-
-@app.cell(hide_code=True)
-def _(calculate_total_endring, pl):
-    def test_calculate_total_endring():
-        # Arrange
-        test_data = pl.DataFrame({
-            "delområde": ["Test_A"],
-            "naturpoeng_for_inngrep": [100.0],
-            "naturpoeng_tapt": [50.0],
-            "naturpoeng_skapt_onsite": [30.0],
-            "naturpoeng_skapt_offsite": [20.0]
-        })
-
-        # Act
-        result_test_total = calculate_total_endring(test_data)
-    
-        # Assert
-        expected_value = 100.0 - 50.0 + 30.0 + 20.0  # = 100
-        actual_value = result_test_total["total_endring"][0]
-    
         assert abs(actual_value - expected_value) < 0.0001
     return
 
