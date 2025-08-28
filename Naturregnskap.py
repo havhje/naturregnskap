@@ -11,37 +11,77 @@ def _():
     import io
     import pathlib
     import pytest as pt
-    return io, mo, pl
+    return mo, pl
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""## Input: P.t. syntetisk datasett """)
+    mo.md(r"""## Input: P.t. syntetisk datasett""")
     return
 
 
-@app.cell(hide_code=True)
-def _(io, pl):
-    # Lager utvidet syntetisk datasett med alle nødvendige felt for komplett Naturregnskap
-
-    eksempel_data = """
-    delområde;utstrekning_for_inngrep;arealtype;regnskapstema;naturkvalitet_nivå;forvaltningsinteresse_nivå;tapt_utstrekning;resterende_utstrekning;påvirkning;utstrekning_etter_tiltak;mål_naturkvalitet_nivå;forvaltningsinteresse_skapt_nivå;avstand fra inngrep;Tidsperspektiv;vanskelighetsgrad;utstrekning_før_tiltak_offsite
-    A;1.5;Verneområder;Økosystemareal;høyeste kvalitet;Vernet;0.5;1.0;Noe forringet;2.0;høyeste kvalitet;Vernet;Innenfor prosjektområdet + buffersone på 2 km;Opptil 5 år;Lav vanskelighetsgrad;1.2
-    B;25.3;Funksjonsområder for arter av nasjonal forvaltningsinteresse;Økologiske funksjonsområder;Svært høy kvalitet;VU;5.0;20.3;Forringet;30.0;Svært høy kvalitet;VU;I direkte nærhet til prosjektområde (utenfor buffersone, men innen radius 20 km);5 til 10 år;Middels vanskelighetsgrad;22.0
-    C;5.7;Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer;Vannforekomster;Moderat kvalitet;Vassdrag med fiskebestander av regional/lokal verdi;1.2;4.5;Ubetydelig endring;8.0;Høy kvalitet;Vassdrag med fiskebestander av regional/lokal verdi;Utenfor prosjektområde, men i samme bioklimatiske sone;10 til 20 år;Høy vanskelighetsgrad;4.8
-    """
-    delområder_df = pl.read_csv(
-        io.StringIO(eksempel_data),
-        separator=';',
-        schema_overrides={
-            'utstrekning_for_inngrep': pl.Float64,
-            'tapt_utstrekning': pl.Float64, 
-            'resterende_utstrekning': pl.Float64,
-            'utstrekning_etter_tiltak': pl.Float64,
-            'utstrekning_før_tiltak_offsite': pl.Float64
+@app.cell
+def _(pl):
+    # Create synthetic dataset using dictionaries - much more readable and easy to modify
+    delområder_data = [
+        {
+            "delområde": "A",
+            "utstrekning_for_inngrep": 1.5,
+            "arealtype": "Verneområder",
+            "regnskapstema": "Økosystemareal",
+            "naturkvalitet_nivå": "høyeste kvalitet",
+            "forvaltningsinteresse_nivå": "Vernet",
+            "tapt_utstrekning": 0.5,
+            "resterende_utstrekning": 1.0,
+            "påvirkning": "Noe forringet",
+            "istandsatt_økosystemareal": 2.0,
+            "mål_naturkvalitet_nivå": "høyeste kvalitet",
+            "mål_forvaltningsinteresse_nivå": "Vernet",
+            "avstand fra inngrep": "Innenfor prosjektområdet + buffersone på 2 km",
+            "Tidsperspektiv": "Opptil 5 år",
+            "vanskelighetsgrad": "Lav vanskelighetsgrad",
+            "utstrekning_før_tiltak_offsite": 1.2
+        },
+        {
+            "delområde": "B",
+            "utstrekning_for_inngrep": 25.3,
+            "arealtype": "Funksjonsområder for arter av nasjonal forvaltningsinteresse",
+            "regnskapstema": "Økologiske funksjonsområder",
+            "naturkvalitet_nivå": "Svært høy kvalitet",
+            "forvaltningsinteresse_nivå": "VU",
+            "tapt_utstrekning": 5.0,
+            "resterende_utstrekning": 20.3,
+            "påvirkning": "Forringet",
+            "istandsatt_økosystemareal": 30.0,
+            "mål_naturkvalitet_nivå": "Svært høy kvalitet",
+            "mål_forvaltningsinteresse_nivå": "VU",
+            "avstand fra inngrep": "I direkte nærhet til prosjektområde (utenfor buffersone, men innen radius 20 km)",
+            "Tidsperspektiv": "5 til 10 år",
+            "vanskelighetsgrad": "Middels vanskelighetsgrad",
+            "utstrekning_før_tiltak_offsite": 22.0
+        },
+        {
+            "delområde": "C",
+            "utstrekning_for_inngrep": 5.7,
+            "arealtype": "Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer",
+            "regnskapstema": "Vannforekomster",
+            "naturkvalitet_nivå": "Moderat kvalitet",
+            "forvaltningsinteresse_nivå": "Vassdrag med fiskebestander av regional/lokal verdi",
+            "tapt_utstrekning": 1.2,
+            "resterende_utstrekning": 4.5,
+            "påvirkning": "Ubetydelig endring",
+            "istandsatt_økosystemareal": 8.0,
+            "mål_naturkvalitet_nivå": "Høy kvalitet",
+            "mål_forvaltningsinteresse_nivå": "Vassdrag med fiskebestander av regional/lokal verdi",
+            "avstand fra inngrep": "Utenfor prosjektområde, men i samme bioklimatiske sone",
+            "Tidsperspektiv": "10 til 20 år",
+            "vanskelighetsgrad": "Høy vanskelighetsgrad",
+            "utstrekning_før_tiltak_offsite": 4.8
         }
-    )
+    ]
 
+    # Convert to Polars DataFrame
+    delområder_df = pl.DataFrame(delområder_data)
     delområder_df
     return (delområder_df,)
 
@@ -174,13 +214,13 @@ def _(
     # Joiner forvaltningsinteresse for skapt natur (med suffix)
     forvaltnings_skapt_df = forvaltnings_interesse_df.select([
         "arealtype", "regnskapstema",
-        pl.col("forvaltningsinteresse_nivå").alias("forvaltningsinteresse_skapt_nivå"),
-        pl.col("forvaltningsinteresse_verdi").alias("forvaltningsinteresse_skapt_verdi")
+        pl.col("forvaltningsinteresse_nivå").alias("mål_forvaltningsinteresse_nivå"),
+        pl.col("forvaltningsinteresse_verdi").alias("mål_forvaltningsinteresse_verdi")
     ])
 
     joined_df = joined_df.join(
         forvaltnings_skapt_df,
-        on=["arealtype", "regnskapstema", "forvaltningsinteresse_skapt_nivå"],
+        on=["arealtype", "regnskapstema", "mål_forvaltningsinteresse_nivå"],
         how="left"
     )
 
@@ -316,8 +356,8 @@ def _(pl):
         """
         Calculate Naturpoeng (tapt) for each row.
 
-        Formula: (Tapt utstrekning × Naturkvalitet før × Forvaltningsinteresse før) +
-                (Resterende utstrekning × Naturkvalitet før × Forvaltningsinteresse før × Påvirkningsfaktor)
+        Formula: (Tapt utstrekning × Naturkvalitet × Forvaltningsinteresse) +
+                (Resterende utstrekning × Naturkvalitet × Forvaltningsinteresse) × Påvirkningsfaktor)
 
         Args:
             df: DataFrame with required columns for calculation
@@ -344,7 +384,7 @@ def _(pl):
         """
         Calculate Naturpoeng (skapt onsite) for each row.
 
-        Formula: (Utstrekning etter tiltak × Mål naturkvalitet × Forvaltningsinteresse) ×
+        Formula: (Utstrekning etter tiltak × Mål naturkvalitet × Mål forvaltningsinteresse) ×
                 (Risikofaktor avstand × Risikofaktor tid × Risikofaktor vanskelighetsgrad)
 
         Args:
@@ -354,9 +394,9 @@ def _(pl):
             DataFrame with added 'naturpoeng_skapt_onsite' column
         """
         return df.with_columns([
-            (pl.col("utstrekning_etter_tiltak").cast(pl.Float64) *
+            (pl.col("istandsatt_økosystemareal").cast(pl.Float64) *
              pl.col("mål_naturkvalitet_verdi").cast(pl.Float64) *
-             pl.col("forvaltningsinteresse_skapt_verdi").cast(pl.Float64) *
+             pl.col("mål_forvaltningsinteresse_verdi").cast(pl.Float64) *
              pl.col("risikofaktor_avstand fra inngrep").cast(pl.Float64) *
              pl.col("risikofaktor_tidsperspektiv").cast(pl.Float64) *
              pl.col("risikofaktor_vanskelighetsgrad").cast(pl.Float64)).alias("naturpoeng_skapt_onsite")
@@ -371,9 +411,11 @@ def _(pl):
         """
         Calculate Naturpoeng (skapt offsite) for each row.
 
-        Formula: {(Utstrekning etter tiltak × Mål naturkvalitet × Forvaltningsinteresse) -
-                 (Utstrekning før tiltak × Naturkvalitet før × Forvaltningsinteresse før)} ×
+        Formula: {(Utstrekning etter tiltak × Mål naturkvalitet × Mål forvaltningsinteresse) -
+                 (Utstrekning før tiltak × Naturkvalitet × Forvaltningsinteresse)} ×
                  (Risikofaktor vanskelighetsgrad × Risikofaktor tid × Risikofaktor avstand)
+
+                 # NP skapt offsite = (Poeng restaurert areal - Poeng det som var der fra før) * Risikofaktorer
 
         Args:
             df: DataFrame with required columns for calculation
@@ -382,9 +424,9 @@ def _(pl):
             DataFrame with added 'naturpoeng_skapt_offsite' column
         """
         return df.with_columns([
-            (((pl.col("utstrekning_etter_tiltak").cast(pl.Float64) *
+            (((pl.col("istandsatt_økosystemareal").cast(pl.Float64) *
                pl.col("mål_naturkvalitet_verdi").cast(pl.Float64) *
-               pl.col("forvaltningsinteresse_skapt_verdi").cast(pl.Float64)) -
+               pl.col("mål_forvaltningsinteresse_verdi").cast(pl.Float64)) -
               (pl.col("utstrekning_før_tiltak_offsite").cast(pl.Float64) *
                pl.col("naturkvalitet_verdi").cast(pl.Float64) *
                pl.col("forvaltningsinteresse_verdi").cast(pl.Float64))) *
@@ -440,16 +482,120 @@ def _(calculate_naturpoeng_for_inngrep, pl):
 
         # Act
         result_test_npfør = calculate_naturpoeng_for_inngrep(test_data) #Når du kjører funksjonen så lager du også den nye kolonnen som er "naturpoeng_for_inngrep" som er sum kolonnen fra denne funksjonen. Så du passer test dataene inn i denne
-    
-    
+
+
         # Assert
         expected_value = 10.0 * 5.0 * 2.0  # = 100
         actual_value = result_test_npfør["naturpoeng_for_inngrep"][0] #[0] sier bare start på kolonnen 0, men her har du bare en kolonne så trengs egentlig ikke. 
 
         assert abs(actual_value - expected_value) < 0.0001
+
+
+
+    return
+
+
+@app.cell
+def _(calculate_naturpoeng_tapt, pl):
+    def test_naturpoeng_tapt():
+        # Arrange
+        test_data1 = pl.DataFrame({
+            "delområde": ["Test_A"],
+            "tapt_utstrekning": [6.0],
+            "naturkvalitet_verdi": [5.0],
+            "forvaltningsinteresse_verdi": [2],
+            "resterende_utstrekning": [4.0],
+            "påvirkning_verdi": [5.0]
+        
+        })
+
+        # Act
+        result_test_nptapt = calculate_naturpoeng_tapt(test_data1) 
     
+        # Assert
+        expected_value = (6 * 5 * 2) + (4 * 5 * 2) * 5  # = 250
+        actual_value = result_test_nptapt["naturpoeng_tapt"][0] #[0] sier bare start på kolonnen 0, men her har du bare en kolonne så trengs egentlig ikke. 
+
+        assert abs(actual_value - expected_value) < 0.0001
 
 
+
+    return
+
+
+@app.cell
+def _(calculate_naturpoeng_skapt_onsite, pl):
+    def test_naturpoeng_skapt_onsite():
+        # Arrange
+        test_data = pl.DataFrame({
+            "delområde": ["Test_A"],
+            "istandsatt_økosystemareal": [8.0],
+            "mål_naturkvalitet_verdi": [4.0],
+            "mål_forvaltningsinteresse_verdi": [3.0],
+            "risikofaktor_avstand fra inngrep": [0.9],
+            "risikofaktor_tidsperspektiv": [0.8],
+            "risikofaktor_vanskelighetsgrad": [0.7]
+        })
+
+        # Act
+        result_test_onsite = calculate_naturpoeng_skapt_onsite(test_data)
+    
+        # Assert
+        expected_value = (8.0 * 4.0 * 3.0) * (0.9 * 0.8 * 0.7)  # = 96 * 0.504 = 48.384
+        actual_value = result_test_onsite["naturpoeng_skapt_onsite"][0]
+
+        assert abs(actual_value - expected_value) < 0.0001
+    return
+
+
+@app.cell
+def _(calculate_naturpoeng_skapt_offsite, pl):
+    def test_naturpoeng_skapt_offsite():
+        # Arrange
+        test_data = pl.DataFrame({
+            "delområde": ["Test_A"],
+            "istandsatt_økosystemareal": [10.0],
+            "mål_naturkvalitet_verdi": [5.0],
+            "mål_forvaltningsinteresse_verdi": [3.0],
+            "utstrekning_før_tiltak_offsite": [6.0],
+            "naturkvalitet_verdi": [4.0],
+            "forvaltningsinteresse_verdi": [2.0],
+            "risikofaktor_vanskelighetsgrad": [0.8],
+            "risikofaktor_tidsperspektiv": [0.7],
+            "risikofaktor_avstand fra inngrep": [0.9]
+        })
+
+        # Act
+        result_test_offsite = calculate_naturpoeng_skapt_offsite(test_data)
+    
+        # Assert
+        expected_value = ((10.0 * 5.0 * 3.0) - (6.0 * 4.0 * 2.0)) * (0.8 * 0.7 * 0.9)  # = (150 - 48) * 0.504 = 102 * 0.504 = 51.408
+        actual_value = result_test_offsite["naturpoeng_skapt_offsite"][0]
+
+        assert abs(actual_value - expected_value) < 0.0001
+    return
+
+
+@app.cell
+def _(calculate_total_endring, pl):
+    def test_calculate_total_endring():
+        # Arrange
+        test_data = pl.DataFrame({
+            "delområde": ["Test_A"],
+            "naturpoeng_for_inngrep": [100.0],
+            "naturpoeng_tapt": [50.0],
+            "naturpoeng_skapt_onsite": [30.0],
+            "naturpoeng_skapt_offsite": [20.0]
+        })
+
+        # Act
+        result_test_total = calculate_total_endring(test_data)
+    
+        # Assert
+        expected_value = 100.0 - 50.0 + 30.0 + 20.0  # = 100
+        actual_value = result_test_total["total_endring"][0]
+    
+        assert abs(actual_value - expected_value) < 0.0001
     return
 
 
