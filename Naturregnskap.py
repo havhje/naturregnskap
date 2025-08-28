@@ -4,99 +4,7 @@ __generated_with = "0.15.0"
 app = marimo.App(width="columns")
 
 
-@app.cell(column=0, hide_code=True)
-def _(mo):
-    mo.md(r"""## Naturregnskap metode""")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        r"""
-    ### 1. Naturpoeng (før inngrep)
-    $$
-    \text{Naturpoeng}_{\text{før}} = A_{t0} \times Nk_{t0} \times Nf_{t0}
-    $$
-
-    ### 2. Naturpoeng (tapt)
-    $$
-    \text{Naturpoeng (tapt)} = (A_{\text{tapt}} \times Nk_{t0} \times Nf_{t0}) + (A_{\text{rest}} \times Nk_{t0} \times Nf_{t0}) \times P
-    $$
-
-    ### 3-1. Naturpoeng (skapt natur)
-    $$
-    \text{Naturpoeng (skapt)} = A_{t1} \times Nk_{t1} \times Nf_{t1} \times R_{\text{avst}} \times R_{\text{tid}} \times R_{\text{van}}
-    $$
-
-    ### 3-2. Naturpoeng (skapt natur off-site)
-    $$
-    \text{Naturpoeng (off-site)} = \{(A_{t1} \times Nk_{t1} \times Nf_{t1}) - (A_{t0} \times Nk_{t0} \times Nf_{t0})\} \times R_{\text{van}} \times R_{\text{tid}} \times R_{\text{avst}}
-    $$
-
-    ### Total endring av Naturpoeng
-    $$
-    \text{Total endring} = \sum \text{Naturpoeng}_{\text{før}} - \sum \text{Naturpoeng}_{\text{tapt}} + \sum \text{Naturpoeng}_{\text{skapt}}
-    $$
-    """
-    )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        r"""
-    ### 1. Naturpoeng (før inngrep)
-    $$
-    \text{Naturpoeng (før inngrep)} = (\text{Utstrekning før inngrep}) \times (\text{Naturkvalitet før inngrep}) \times (\text{Forvaltningsinteresse før inngrep})
-    $$
-
-    ### 2. Naturpoeng (tapt)
-    $$
-    \begin{aligned}
-    \text{Naturpoeng (tapt)} = & \; (\text{Tapt utstrekning} \times \text{Naturkvalitet før inngrep} \times \text{Forvaltningsinteresse før inngrep}) \\
-    & + (\text{Resterende utstrekning} \times \text{Naturkvalitet før inngrep} \times \text{Forvaltningsinteresse før inngrep}) \times \text{Påvirkningsfaktor}
-    \end{aligned}
-    $$
-
-    ### 3-1. Naturpoeng (skapt natur)
-    $$
-    \begin{aligned}
-    \text{Naturpoeng (skapt)} = & \; (\text{Utstrekning etter tiltak}) \times (\text{Mål for naturkvalitet}) \times (\text{Forvaltningsinteresse}) \\
-    & \times (\text{Risikofaktor avstand}) \times (\text{Risikofaktor tid}) \times (\text{Risikofaktor vanskelighetsgrad})
-    \end{aligned}
-    $$
-
-    ### 3-2. Naturpoeng (skapt natur off-site)
-    $$
-    \begin{aligned}
-    \text{Naturpoeng (off-site)} = & \; \{(\text{Utstrekning etter tiltak} \times \text{Mål for naturkvalitet} \times \text{Forvaltningsinteresse}) \\
-    & - (\text{Utstrekning før tiltak} \times \text{Naturkvalitet før tiltak} \times \text{Forvaltningsinteresse før tiltak})\} \\
-    & \times \text{Risikofaktor vanskelighetsgrad} \times \text{Risikofaktor tid} \times \text{Risikofaktor avstand}
-    \end{aligned}
-    $$
-
-    ### Total endring av Naturpoeng
-    $$
-    \text{Total endring} = (\sum \text{Naturpoeng før}) - (\sum \text{Naturpoeng tapt}) + (\sum \text{Naturpoeng skapt})
-    $$
-    """
-    )
-    return
-
-
-@app.cell
-def _():
-    return
-
-
-@app.cell
-def _():
-    return
-
-
-@app.cell(column=1)
+@app.cell(column=0)
 def _():
     import marimo as mo
     import polars as pl
@@ -109,103 +17,7 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""## Input: P.t. syntetisk datasett""")
-    return
-
-
-@app.cell
-def _(pl):
-    # Create synthetic dataset using dictionaries - much more readable and easy to modify
-    delområder_data = [
-        {
-            "Type "
-            "delområde": "A", #Eks med både tap og restaurering onsite
-            "utstrekning_for_inngrep": 100,
-            "arealtype": "Øvrig natur",
-            "regnskapstema": "Økosystemareal",
-            "naturkvalitet_nivå": "Svært høy lokalitetskvalitet",
-            "forvaltningsinteresse_nivå": "Ingen",
-        
-            "tapt_utstrekning": 30,
-            "resterende_utstrekning": 70.0,
-            "påvirkning": "Noe forringet",
-        
-        },
-        {
-            "delområde": "B",#Eks med bare restaurering onsite 
-            "istandsatt_økosystemareal": 40.0,
-            "mål_naturkvalitet_nivå": "Høy lokalitetskvalitet",
-            "mål_forvaltningsinteresse_nivå": "Ingen",
-            "avstand fra inngrep": "I direkte nærhet til prosjektområde (utenfor buffersone, men innen radius 20 km)",
-            "Tidsperspektiv": "5 til 10 år",
-            "vanskelighetsgrad": "Middels vanskelighetsgrad",
-            "utstrekning_før_tiltak_offsite": 22.0  
-        },
-        {
-            "delområde": "C",#Eks med bare restaurering offsite 
-            "utstrekning_før_tiltak_offsite": 62, 
-            "arealtype": "Øvrig natur",
-            "regnskapstema": "Økosystemareal",
-            "naturkvalitet_nivå": "Moderat lokalitetskvalitet",
-            "forvaltningsinteresse_nivå": "Ingen",
-
-            "istandsatt_økosystemareal": 10.0,
-            "mål_naturkvalitet_nivå": "Høy lokalitetskvalitet",
-            "mål_forvaltningsinteresse_nivå": "Ingen",
-            
-            "avstand fra inngrep": "Innenfor prosjektområdet + buffersone på 2 km",
-            "Tidsperspektiv": "Opptil 5 år",
-            "vanskelighetsgrad": "Lav vanskelighetsgrad",
-        },
-        {
-            "delområde": "B",
-            "utstrekning_for_inngrep": 25.3,
-            "arealtype": "Funksjonsområder for arter av nasjonal forvaltningsinteresse",
-            "regnskapstema": "Økologiske funksjonsområder",
-            "naturkvalitet_nivå": "Svært høy kvalitet",
-            "forvaltningsinteresse_nivå": "VU",
-            "tapt_utstrekning": 5.0,
-            "resterende_utstrekning": 20.3,
-            "påvirkning": "Forringet",
-        }
-    ]
-
-    # Convert to Polars DataFrame
-    delområder_df = pl.DataFrame(delområder_data)
-    delområder_df
-    return (delområder_df,)
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""## Ferdige beregninger (output datasett)""")
-    return
-
-
-@app.cell(hide_code=True)
-def _(
-    calculate_naturpoeng_for_inngrep,
-    calculate_naturpoeng_skapt_offsite,
-    calculate_naturpoeng_skapt_onsite,
-    calculate_naturpoeng_tapt,
-    calculate_total_endring,
-    naturregnskaps_data_df,
-):
-    # Appliserer alle beregninger i rekkefølge
-    result_df = naturregnskaps_data_df
-    result_df = calculate_naturpoeng_for_inngrep(result_df)
-    result_df = calculate_naturpoeng_tapt(result_df)  
-    result_df = calculate_naturpoeng_skapt_onsite(result_df)
-    result_df = calculate_naturpoeng_skapt_offsite(result_df)
-    final_result_df = calculate_total_endring(result_df)
-
-    final_result_df
-    return
-
-
-@app.cell(column=2, hide_code=True)
-def _(mo):
-    mo.md(r"""## Data pipeline""")
+    mo.md(r"""## Importerer alle tabeller""")
     return
 
 
@@ -301,6 +113,12 @@ def _(
 
 
 @app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Input: P.t. syntetisk datasett""")
+    return
+
+
+@app.cell(hide_code=True)
 def _(
     avstand_clean,
     duckdb,
@@ -327,73 +145,382 @@ def _(
 
 
 @app.cell
+def _(pl):
+    # Create synthetic dataset using dictionaries - much more readable and easy to modify
+    delområder_data = [
+        {
+            "type": "Påvirket delområde",
+            "delområde": "A", #Eks med både tap og restaurering onsite
+            "utstrekning_for_inngrep": 100,
+            "arealtype": "Øvrig natur",
+            "regnskapstema": "Økosystemareal",
+            "naturkvalitet_nivå": "Svært høy lokalitetskvalitet",
+            "forvaltningsinteresse_nivå": "Ingen",
+        
+            "tapt_utstrekning": 30,
+            "resterende_utstrekning": 70.0,
+            "påvirkning": "Noe forringet",
+        
+        },
+        {
+            "type": "Restaurering onsite",
+            "delområde": "B",#Eks med bare restaurering onsite
+            "arealtype": "Øvrig natur",
+            "regnskapstema": "Økosystemareal",
+            "istandsatt_økosystemareal": 40.0,
+            "mål_naturkvalitet_nivå": "Høy lokalitetskvalitet",
+            "mål_forvaltningsinteresse_nivå": "Ingen",
+            "avstand fra inngrep": "I direkte nærhet til prosjektområde (utenfor buffersone, men innen radius 20 km)",
+            "Tidsperspektiv": "5 til 10 år",
+            "vanskelighetsgrad": "Middels vanskelighetsgrad",
+        },
+        {
+            "type": "Restaurering offsite",
+            "delområde": "C",#Eks med bare restaurering offsite 
+            "utstrekning_før_tiltak_offsite": 62, 
+            "arealtype": "Øvrig natur",
+            "regnskapstema": "Økosystemareal",
+            "naturkvalitet_nivå": "Moderat lokalitetskvalitet",
+            "forvaltningsinteresse_nivå": "Ingen",
+
+            "istandsatt_økosystemareal": 10.0,
+            "mål_naturkvalitet_nivå": "Høy lokalitetskvalitet",
+            "mål_forvaltningsinteresse_nivå": "Ingen",
+            
+            "avstand fra inngrep": "Innenfor prosjektområdet + buffersone på 2 km",
+            "Tidsperspektiv": "Opptil 5 år",
+            "vanskelighetsgrad": "Lav vanskelighetsgrad",
+        },
+        {
+            "type": "Påvirket delområde",
+            "delområde": "B",
+            "utstrekning_for_inngrep": 25.3,
+            "arealtype": "Funksjonsområder for arter av nasjonal forvaltningsinteresse",
+            "regnskapstema": "Økologiske funksjonsområder",
+            "naturkvalitet_nivå": "Svært høy kvalitet",
+            "forvaltningsinteresse_nivå": "VU",
+            "tapt_utstrekning": 5.0,
+            "resterende_utstrekning": 20.3,
+            "påvirkning": "Forringet",
+        }
+    ]
+
+    # Convert to Polars DataFrame
+    delområder_df = pl.DataFrame(delområder_data)
+    delområder_df
+    return (delområder_df,)
+
+
+@app.cell(column=1, hide_code=True)
+def _(mo):
+    mo.md(r"""## Resultater""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(naturpoeng_tapt_df):
+    #Viser bare relevante rader i naturpoeng tapt datasettet
+    naturpoeng_tapt_view = naturpoeng_tapt_df.select([
+        "delområde",
+        "type",
+        "utstrekning_for_inngrep",
+        "tapt_utstrekning",
+        "resterende_utstrekning",
+        "påvirkning",
+        "naturkvalitet_verdi",
+        "forvaltningsinteresse_verdi",
+        "påvirkning_verdi",
+        "naturpoeng_for_inngrep",
+        "naturpoeng_tapt"
+    ])
+
+    naturpoeng_tapt_view
+    return
+
+
+@app.cell(hide_code=True)
+def _(naturpoengskapt_restaurering_onsite_df):
+    naturpoeng_onsite_results = naturpoengskapt_restaurering_onsite_df.select([
+        "delområde",
+        "type",
+        "istandsatt_økosystemareal",
+        "mål_naturkvalitet_nivå",
+        "mål_forvaltningsinteresse_nivå",
+        "mål_naturkvalitet_verdi",
+        "mål_forvaltningsinteresse_verdi",
+        "avstand fra inngrep",
+        "Tidsperspektiv",
+        "vanskelighetsgrad",
+        "risikofaktor_avstand fra inngrep",
+        "risikofaktor_tidsperspektiv",
+        "risikofaktor_vanskelighetsgrad",
+        "naturpoeng_skapt_onsite"
+    ])
+
+    naturpoeng_onsite_results
+    return
+
+
+@app.cell(hide_code=True)
+def _(naturpoengskapt_restaurering_offsite_df):
+    naturpoeng_offsite_results = naturpoengskapt_restaurering_offsite_df.select([
+        "delområde",
+        "type",
+        "utstrekning_før_tiltak_offsite",
+        "naturkvalitet_nivå",
+        "forvaltningsinteresse_nivå",
+        "naturkvalitet_verdi",
+        "forvaltningsinteresse_verdi",
+        "istandsatt_økosystemareal",
+        "mål_naturkvalitet_nivå",
+        "mål_forvaltningsinteresse_nivå",
+        "mål_naturkvalitet_verdi",
+        "mål_forvaltningsinteresse_verdi",
+        "avstand fra inngrep",
+        "Tidsperspektiv",
+        "vanskelighetsgrad",
+        "risikofaktor_avstand fra inngrep",
+        "risikofaktor_tidsperspektiv",
+        "risikofaktor_vanskelighetsgrad",
+        "naturpoeng_skapt_offsite"
+    ])
+
+    naturpoeng_offsite_results
+    return
+
+
+@app.cell(column=2, hide_code=True)
+def _(mo):
+    mo.md(r"""# Beregninger""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Beregning naturpoeng tapt""")
+    return
+
+
+@app.cell
 def _(
-    avstand_df,
     delområder_df,
     forvaltnings_interesse_df,
     naturkvalitet_df,
     pavirkning_df,
     pl,
-    tidsperspektiv_df,
-    vanskelighetsgrad_df,
 ):
-    # Joiner alle relevante data fra CSV filene til hovedtabellen
+    # Filter for only rows that have naturpoeng tapt (påvirkede delområder)
+    påvirket_delområde_df = delområder_df.filter(pl.col("type") == "Påvirket delområde")
 
-    # Først joiner vi naturkvalitet data (for både før og mål nivåer)
-    joined_df = delområder_df.join(
+    # Join with naturkvalitet lookup
+    påvirket_delområde_df = påvirket_delområde_df.join(
         naturkvalitet_df,
-        on=["arealtype", "regnskapstema", "naturkvalitet_nivå"], 
+        on=["arealtype", "regnskapstema", "naturkvalitet_nivå"],
         how="left"
     )
 
-    # Joiner forvaltningsinteresse (før)
-    joined_df = joined_df.join(
+    # Join with forvaltningsinteresse lookup
+    påvirket_delområde_df = påvirket_delområde_df.join(
         forvaltnings_interesse_df,
         on=["arealtype", "regnskapstema", "forvaltningsinteresse_nivå"],
         how="left"
     )
 
-    # Joiner mål naturkvalitet verdier (med suffix for å skille fra før-verdier)
-    mål_naturkvalitet_df = naturkvalitet_df.select([
-        "arealtype", "regnskapstema", 
-        pl.col("naturkvalitet_nivå").alias("mål_naturkvalitet_nivå"),
-        pl.col("naturkvalitet_verdi").alias("mål_naturkvalitet_verdi")
-    ])
+    # Join with påvirkning lookup
+    påvirket_delområde_df = påvirket_delområde_df.join(
+        pavirkning_df,
+        on="påvirkning",
+        how="left"
+    )
+    return (påvirket_delområde_df,)
 
-    joined_df = joined_df.join(
-        mål_naturkvalitet_df,
-        on=["arealtype", "regnskapstema", "mål_naturkvalitet_nivå"],
+
+@app.cell
+def _(calculate_naturpoeng_for_inngrep, påvirket_delområde_df):
+    # Calculate naturpoeng før inngrep
+    naturpoeng_for_inngrep = calculate_naturpoeng_for_inngrep(påvirket_delområde_df)
+    return (naturpoeng_for_inngrep,)
+
+
+@app.cell
+def _(calculate_naturpoeng_tapt, naturpoeng_for_inngrep):
+    # Calculate naturpoeng tapt
+    naturpoeng_tapt_df = calculate_naturpoeng_tapt(naturpoeng_for_inngrep)
+
+
+    return (naturpoeng_tapt_df,)
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Beregning naturpoeng skapt onsite""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(
+    avstand_df,
+    delområder_df,
+    forvaltnings_interesse_df,
+    naturkvalitet_df,
+    pl,
+    tidsperspektiv_df,
+    vanskelighetsgrad_df,
+):
+    # Filter for only rows that have naturpoeng skapt onsite
+    restaurering_onsite_df = delområder_df.filter(pl.col("type") == "Restaurering onsite")
+
+    # Join with naturkvalitet for MÅL values
+    # We need to rename the column for the join since lookup uses "naturkvalitet_nivå"
+    restaurering_onsite_df = restaurering_onsite_df.join(
+        naturkvalitet_df.select([
+            pl.col("arealtype"),
+            pl.col("regnskapstema"),
+            pl.col("naturkvalitet_nivå"),
+            pl.col("naturkvalitet_verdi").alias("mål_naturkvalitet_verdi")
+        ]),
+        left_on=["arealtype", "regnskapstema", "mål_naturkvalitet_nivå"],
+        right_on=["arealtype", "regnskapstema", "naturkvalitet_nivå"],
         how="left"
     )
 
-    # Joiner forvaltningsinteresse for skapt natur (med suffix)
-    forvaltnings_skapt_df = forvaltnings_interesse_df.select([
-        "arealtype", "regnskapstema",
-        pl.col("forvaltningsinteresse_nivå").alias("mål_forvaltningsinteresse_nivå"),
-        pl.col("forvaltningsinteresse_verdi").alias("mål_forvaltningsinteresse_verdi")
-    ])
-
-    joined_df = joined_df.join(
-        forvaltnings_skapt_df,
-        on=["arealtype", "regnskapstema", "mål_forvaltningsinteresse_nivå"],
+    # Join with forvaltningsinteresse for MÅL values
+    restaurering_onsite_df = restaurering_onsite_df.join(
+        forvaltnings_interesse_df.select([
+            pl.col("arealtype"),
+            pl.col("regnskapstema"),
+            pl.col("forvaltningsinteresse_nivå"),
+            pl.col("forvaltningsinteresse_verdi").alias("mål_forvaltningsinteresse_verdi")
+        ]),
+        left_on=["arealtype", "regnskapstema", "mål_forvaltningsinteresse_nivå"],
+        right_on=["arealtype", "regnskapstema", "forvaltningsinteresse_nivå"],
         how="left"
     )
 
-    # Joiner risikofaktorer og påvirkning
-    joined_df = joined_df.join(avstand_df, on="avstand fra inngrep", how="left")
-    joined_df = joined_df.join(pavirkning_df, on="påvirkning", how="left")
-    joined_df = joined_df.join(tidsperspektiv_df, on="Tidsperspektiv", how="left")
-    joined_df = joined_df.join(vanskelighetsgrad_df, on="vanskelighetsgrad", how="left")
+    # Join with risk factor lookups
+    restaurering_onsite_df = restaurering_onsite_df.join(
+        avstand_df,
+        on="avstand fra inngrep",
+        how="left"
+    )
 
-    # Den komplette datasettet for alle beregninger, hvor alle manglende verdier = 0 fra input datasettet
-    naturregnskaps_data_df = joined_df.with_columns([
-        pl.col(col).fill_null(0) 
-        for col in joined_df.columns 
-        if joined_df[col].dtype in [pl.Float64, pl.Int64, pl.Float32, pl.Int32]
-    ])
+    restaurering_onsite_df = restaurering_onsite_df.join(
+        tidsperspektiv_df,
+        on="Tidsperspektiv",
+        how="left"
+    )
 
-    naturregnskaps_data_df
-    return (naturregnskaps_data_df,)
+    restaurering_onsite_df = restaurering_onsite_df.join(
+        vanskelighetsgrad_df,
+        on="vanskelighetsgrad",
+        how="left"
+    )
+    return (restaurering_onsite_df,)
+
+
+@app.cell
+def _(calculate_naturpoeng_skapt_onsite, restaurering_onsite_df):
+    naturpoengskapt_restaurering_onsite_df = calculate_naturpoeng_skapt_onsite(restaurering_onsite_df)
+    return (naturpoengskapt_restaurering_onsite_df,)
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Beregning naturpoeng skapt offsite""")
+    return
+
+
+@app.cell
+def _(
+    avstand_df,
+    delområder_df,
+    forvaltnings_interesse_df,
+    naturkvalitet_df,
+    pl,
+    tidsperspektiv_df,
+    vanskelighetsgrad_df,
+):
+    # Filter for only rows that have naturpoeng skapt offsite
+    restaurering_offsite_df = delområder_df.filter(pl.col("type") == "Restaurering offsite")
+
+    # For offsite, we need BOTH "før" values (existing state) and "mål" values (target state)
+
+    # Join with naturkvalitet for FØR values (existing state at offsite location)
+    restaurering_offsite_df = restaurering_offsite_df.join(
+        naturkvalitet_df,
+        on=["arealtype", "regnskapstema", "naturkvalitet_nivå"],
+        how="left"
+    )
+
+    # Join with forvaltningsinteresse for FØR values
+    restaurering_offsite_df = restaurering_offsite_df.join(
+        forvaltnings_interesse_df,
+        on=["arealtype", "regnskapstema", "forvaltningsinteresse_nivå"],
+        how="left"
+    )
+
+    # Join with naturkvalitet for MÅL values (target state after restoration)
+    restaurering_offsite_df = restaurering_offsite_df.join(
+        naturkvalitet_df.select([
+            pl.col("arealtype"),
+            pl.col("regnskapstema"),
+            pl.col("naturkvalitet_nivå"),
+            pl.col("naturkvalitet_verdi").alias("mål_naturkvalitet_verdi")
+        ]),
+        left_on=["arealtype", "regnskapstema", "mål_naturkvalitet_nivå"],
+        right_on=["arealtype", "regnskapstema", "naturkvalitet_nivå"],
+        how="left"
+    )
+
+    # Join with forvaltningsinteresse for MÅL values
+    restaurering_offsite_df = restaurering_offsite_df.join(
+        forvaltnings_interesse_df.select([
+            pl.col("arealtype"),
+            pl.col("regnskapstema"),
+            pl.col("forvaltningsinteresse_nivå"),
+            pl.col("forvaltningsinteresse_verdi").alias("mål_forvaltningsinteresse_verdi")
+        ]),
+        left_on=["arealtype", "regnskapstema", "mål_forvaltningsinteresse_nivå"],
+        right_on=["arealtype", "regnskapstema", "forvaltningsinteresse_nivå"],
+        how="left"
+    )
+
+    # Join with risk factor lookups
+    restaurering_offsite_df = restaurering_offsite_df.join(
+        avstand_df,
+        on="avstand fra inngrep",
+        how="left"
+    )
+
+    restaurering_offsite_df = restaurering_offsite_df.join(
+        tidsperspektiv_df,
+        on="Tidsperspektiv",
+        how="left"
+    )
+
+    restaurering_offsite_df = restaurering_offsite_df.join(
+        vanskelighetsgrad_df,
+        on="vanskelighetsgrad",
+        how="left"
+    )
+    return (restaurering_offsite_df,)
+
+
+@app.cell
+def _(calculate_naturpoeng_skapt_offsite, restaurering_offsite_df):
+    naturpoengskapt_restaurering_offsite_df = calculate_naturpoeng_skapt_offsite(restaurering_offsite_df)
+    return (naturpoengskapt_restaurering_offsite_df,)
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Samlet beregninger""")
+    return
+
+
+@app.cell
+def _():
+    return
 
 
 @app.cell(column=3, hide_code=True)
@@ -698,61 +825,6 @@ def _(
                 error_msg += f"\n{invalid}\n"
             error_msg += "\n" + "=" * 50
             error_msg += "\nFix your synthetic data to use valid combinations from the CSV files."
-        
-            assert False, error_msg
-    return
-
-
-@app.cell(hide_code=True)
-def _(naturregnskaps_data_df):
-    def test_joined_data_has_required_values():
-        """
-        Test that after joins, all required calculation fields have values.
-        This ensures the pipeline produces valid data for calculations.
-        """
-        # Run the actual pipeline
-        result = naturregnskaps_data_df
-    
-        missing_values = []
-    
-        # Check each row for missing critical values
-        for row_idx, row in enumerate(result.iter_rows(named=True)):
-            delområde = row["delområde"]
-        
-            # Check values needed for "før inngrep" calculation
-            if row["utstrekning_for_inngrep"] is not None:
-                if row["naturkvalitet_verdi"] is None:
-                    missing_values.append(f"Row {row_idx} (delområde {delområde}): Missing naturkvalitet_verdi")
-                if row["forvaltningsinteresse_verdi"] is None:
-                    missing_values.append(f"Row {row_idx} (delområde {delområde}): Missing forvaltningsinteresse_verdi")
-        
-            # Check values needed for "tapt" calculation
-            if row["tapt_utstrekning"] is not None:
-                if row["påvirkning_verdi"] is None:
-                    missing_values.append(f"Row {row_idx} (delområde {delområde}): Missing påvirkning_verdi")
-        
-            # Check values needed for "skapt" calculations
-            if row["istandsatt_økosystemareal"] is not None:
-                required_risk_factors = [
-                    "risikofaktor_avstand fra inngrep",
-                    "risikofaktor_tidsperspektiv", 
-                    "risikofaktor_vanskelighetsgrad"
-                ]
-                for factor in required_risk_factors:
-                    if row[factor] is None:
-                        missing_values.append(f"Row {row_idx} (delområde {delområde}): Missing {factor}")
-    
-        # Assert with helpful message
-        if missing_values:
-            error_msg = "\n\nMISSING VALUES AFTER JOINS:\n"
-            error_msg += "=" * 50 + "\n"
-            for missing in missing_values:
-                error_msg += missing + "\n"
-            error_msg += "=" * 50
-            error_msg += "\n\nThis means your joins are failing. Check that:"
-            error_msg += "\n1. The combinations in your input data exist in CSV files"
-            error_msg += "\n2. There are no whitespace/encoding issues"
-            error_msg += "\n3. Column names match exactly"
         
             assert False, error_msg
     return
