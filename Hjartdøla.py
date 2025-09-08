@@ -1,7 +1,7 @@
 import marimo
 
 __generated_with = "0.15.2"
-app = marimo.App(width="medium")
+app = marimo.App(width="medium", layout_file="layouts/Hjartdøla.slides.json")
 
 
 @app.cell(hide_code=True)
@@ -10,6 +10,8 @@ def _():
     import polars as pl
     import altair as alt
     from PIL import Image
+    import great_tables as gt
+    from great_tables import html
     return Image, alt, mo, pl
 
 
@@ -21,12 +23,6 @@ def _(mo):
     ##Case naturregnskap - Foreløpige resultater og vurderinger
     """
     )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r""" """)
     return
 
 
@@ -87,12 +83,49 @@ def _(mo):
     hjartdola_df = mo.sql(
         f"""
         SELECT * FROM '/Users/havardhjermstad-sollerud/Documents/Kodeprosjekter/marimo/naturregnskap/Hjartdøla/hjartdøla.csv';
-        """
+        """,
+        output=False
     )
     return (hjartdola_df,)
 
 
 @app.cell
+def _(mo):
+    mo.md(
+        r"""
+    ## Konstante verdier per scenario
+
+    *Lik for alle delområder - kun areal/utstrekning som endres*
+
+    ### Best Case Scenario
+    - **Naturkvalitet (Nk)**: 2.2 *(mulig verdiområde - sjekkkk!!!: 0-4)*
+    - **Forvaltningsinteresse (Nf)**: 3.0 *(mulig verdiområde: 0-4)*
+    - **Konstant produkt**: Nk × Nf = 2.2 × 3.0 = **6.6**
+
+    ### Worst Case Scenario  
+    - **Naturkvalitet (Nk)**: 1.0 *(mulig verdiområde: 0-4)*
+    - **Forvaltningsinteresse (Nf)**: 1.0 *(mulig verdiområde: 0-4)*
+    - **Konstant produkt**: Nk × Nf = 1.0 × 1.0 = **1.0**
+
+    ---
+
+    ### Variabel per delområde
+    - **Utstrekning (U)**: Varierer per delområde (meter)
+
+    ### Forenklet beregning
+
+    I praksis bruker vi følgende formel:
+
+    $$\text{Naturpoeng}_{\text{delområde}} = U_{\text{delområde}} \times (Nk \times Nf)_{\text{scenario}}$$
+
+
+
+    """
+    )
+    return
+
+
+@app.cell(hide_code=True)
 def _(alt, hjartdola_df, mo, pl):
     # Prepare data for visualization
     _chart_data = hjartdola_df.with_columns(
@@ -117,37 +150,62 @@ def _(alt, hjartdola_df, mo, pl):
         opacity=alt.Opacity(
             'før/etter:N',
             scale=alt.Scale(domain=['Før', 'Etter'], range=[1, 0.6]),
-            legend=alt.Legend(title='Tidspunkt')
+            legend=alt.Legend(title='Tidspunkt', titleFontSize=14, labelFontSize=12)
         ),
         strokeDash=alt.StrokeDash(
             'best_case/worst_case:N',
             scale=alt.Scale(domain=['Best case', 'Worst case'], range=[[1, 0], [5, 5]]),
-            legend=alt.Legend(title='Scenario')
+            legend=alt.Legend(title='Scenario', titleFontSize=14, labelFontSize=12)
         ),
         tooltip=['delområde:N', 'scenario:N', 'naturpoeng_for_inngrep:Q']
     )
 
     _bars = _base.mark_bar(
         stroke='white',
-        strokeWidth=2,
-        height=15
+        strokeWidth=3,
+        height=25
     ).encode(
         y=alt.Y('scenario:N', title=''),
-        row=alt.Row('delområde:N', header=alt.Header(labelAngle=0, labelAlign='left', title=''))
+        row=alt.Row('delområde:N', header=alt.Header(labelAngle=0, labelAlign='left', title='', labelFontSize=13))
     )
 
     _chart = _bars.properties(
-        width=600,
-        height=50,
-        title='Naturpoeng per delområde - Før/Etter & Best/Worst Case'
+        width=2000,
+        height=150,
+        title=alt.TitleParams(
+            text='Naturpoeng per delområde - Før/Etter & Best/Worst Case',
+            fontSize=16,
+            fontWeight='normal'
+        )
     ).configure_facet(
-        spacing=5
+        spacing=8
     ).configure_axis(
-        labelFontSize=11,
-        titleFontSize=12
+        labelFontSize=12,
+        titleFontSize=14
+    ).configure_legend(
+        symbolSize=120,
+        symbolStrokeWidth=2,
+        padding=10,
+        columnPadding=15,
+        rowPadding=5
     ).interactive()
 
     mo.ui.altair_chart(_chart)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    Slide med forslag til videre arbeid og utvikling
+
+    Fokusere på akvatisk
+    Feltkartlegging
+    Eller for områder som er godt kartlagt
+    Videreutvikle beregningsmetodikk for vann
+    """
+    )
     return
 
 
