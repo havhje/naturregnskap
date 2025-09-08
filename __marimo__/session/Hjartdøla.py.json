@@ -44,6 +44,19 @@
       "console": []
     },
     {
+      "id": "USTL",
+      "code_hash": "8146263fb73d019245e0e0a66a03d16d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"skrivc-at-du-bruker-samme-formel-for-naturpoeng-etter-som-fr-og-at-du-ikke-bruker-tapt-formlene-pga-tufordringen-med-denne-mtp-vann-og-at-du-har-noe-etterdata\">Skrivc at du bruker samme formel for naturpoeng etter som f\u00f8r, og at du ikke bruker tapt formlene. Pga tufordringen med denne mtp vann og at du har noe etterdata.</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "hTrs",
       "code_hash": "7f5cc8c086253af616ef2734201674a4",
       "outputs": [
@@ -77,6 +90,19 @@
           "type": "data",
           "data": {
             "text/html": "<span class=\"markdown prose dark:prose-invert\"><h1 id=\"lag-den-under-selv-men-diu-ma-ha-med-fretter-lag-fire-celler-og-bruk-mohstack-til-a-stacke-de-under-der-sa-kan-du-ha-formelen\">Lag den under selv, men diu m\u00e5 ha med f\u00f8r/etter. Lag fire \"celler\" og bruk mo.hstack til \u00e5 stacke de. Under der s\u00e5 kan du ha formelen.</h1>\n<span class=\"paragraph\">F\u00e5 med rangen/spennet til alle verdiene. og forklaringen p\u00e5 hvorfor verdien er satt som den er. </span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "DBzL",
+      "code_hash": "dc4864d9e4d0c650753624cb37c5a6dc",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"vis-den-prosentvise-forskjellen-mellom-de-ulike-scenarione-om-utstrekningen-er-lik-mellom-de-ulike-scenarioene-for-ett-delomrade-er-det-den-forskjellen-mellom-faktorene-se-under-som-gir-deg-forskjell\">Vis den prosentvise forskjellen mellom de ulike scenarione. Om utstrekningen er lik mellom de ulike scenarioene for ett delomr\u00e5de. Er det den % forskjellen mellom faktorene \"se under \" som gir deg % forskjell.</h2></span>"
           }
         }
       ],

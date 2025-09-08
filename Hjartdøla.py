@@ -63,6 +63,12 @@ def _(mo):
     return
 
 
+@app.cell
+def _(mo):
+    mo.md(r"""## Skrivc at du bruker samme formel for naturpoeng etter som før, og at du ikke bruker tapt formlene. Pga tufordringen med denne mtp vann og at du har noe etterdata. """)
+    return
+
+
 @app.cell(hide_code=True)
 def _(Image, mo):
 
@@ -98,6 +104,12 @@ def _(mo):
     Få med rangen/spennet til alle verdiene. og forklaringen på hvorfor verdien er satt som den er. 
     """
     )
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""## Vis den prosentvise forskjellen mellom de ulike scenarione. Om utstrekningen er lik mellom de ulike scenarioene for ett delområde. Er det den % forskjellen mellom faktorene "se under " som gir deg % forskjell. """)
     return
 
 
