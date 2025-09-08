@@ -128,7 +128,7 @@ def _(
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""## Input: P.t. syntetisk datasett""")
+    mo.md(r"""## Input""")
     return
 
 
@@ -158,8 +158,44 @@ def _(
     )
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""#### Ekte datasett""")
+    return
+
+
 @app.cell
+def _(mo):
+    nat_uryddet_df = mo.sql(
+        f"""
+        SELECT * FROM '/Users/havardhjermstad-sollerud/Downloads/nat_test_ri.csv';
+        """
+    )
+    return (nat_uryddet_df,)
+
+
+@app.cell
+def _(nat_uryddet_df, pl):
+    # Rydder i importet datasett (trailing spaces, capital letters, etc)
+
+    nat_df = nat_uryddet_df.with_columns([
+        pl.col(col).str.strip_chars() 
+        for col in nat_uryddet_df.columns 
+        if nat_uryddet_df[col].dtype == pl.Utf8
+    ])
+
+    return (nat_df,)
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""#### Syntetisk datasett""")
+    return
+
+
+@app.cell(hide_code=True)
 def _(pl):
+
     # Create synthetic dataset using dictionaries - much more readable and easy to modify
     delområder_data = [
         {
@@ -220,14 +256,20 @@ def _(pl):
     ]
 
     # Convert to Polars DataFrame
-    delområder_df = pl.DataFrame(delområder_data)
-    delområder_df
-    return (delområder_df,)
+    delområder_df_syntetisk = pl.DataFrame(delområder_data)
+    delområder_df_syntetisk
+    return
 
 
 @app.cell(column=1, hide_code=True)
 def _(mo):
     mo.md(r"""## Resultater""")
+    return
+
+
+@app.cell
+def _(naturpoeng_tapt_df):
+    naturpoeng_tapt_df
     return
 
 
@@ -342,15 +384,9 @@ def _(mo):
 
 
 @app.cell
-def _(
-    delområder_df,
-    forvaltnings_interesse_df,
-    naturkvalitet_df,
-    pavirkning_df,
-    pl,
-):
+def _(forvaltnings_interesse_df, nat_df, naturkvalitet_df, pavirkning_df, pl):
     # Filter for only rows that have naturpoeng tapt (påvirkede delområder)
-    påvirket_delområde_df = delområder_df.filter(pl.col("type") == "Påvirket delområde")
+    påvirket_delområde_df = nat_df.filter(pl.col("type") == "Påvirket delområde")
 
     # Join with naturkvalitet lookup
     påvirket_delområde_df = påvirket_delområde_df.join(
