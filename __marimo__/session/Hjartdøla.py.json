@@ -70,6 +70,19 @@
       "console": []
     },
     {
+      "id": "mDYX",
+      "code_hash": "34d67d095f6ab6ffa19d12e6c8bedeb2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h1 id=\"lag-den-under-selv-men-diu-ma-ha-med-fretter-lag-fire-celler-og-bruk-mohstack-til-a-stacke-de-under-der-sa-kan-du-ha-formelen\">Lag den under selv, men diu m\u00e5 ha med f\u00f8r/etter. Lag fire \"celler\" og bruk mo.hstack til \u00e5 stacke de. Under der s\u00e5 kan du ha formelen.</h1>\n<span class=\"paragraph\">F\u00e5 med rangen/spennet til alle verdiene. og forklaringen p\u00e5 hvorfor verdien er satt som den er. </span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "GBAi",
       "code_hash": "e7f33789b30b6c7858f892ea8395b4af",
       "outputs": [

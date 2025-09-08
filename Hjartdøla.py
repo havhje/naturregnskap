@@ -93,6 +93,18 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
+    # Lag den under selv, men diu må ha med før/etter. Lag fire "celler" og bruk mo.hstack til å stacke de. Under der så kan du ha formelen. 
+
+    Få med rangen/spennet til alle verdiene. og forklaringen på hvorfor verdien er satt som den er. 
+    """
+    )
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        r"""
     ## Konstante verdier per scenario
 
     *Lik for alle delområder - kun areal/utstrekning som endres*
