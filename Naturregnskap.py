@@ -12,9 +12,7 @@ def _(mo):
 
     - Lage ett excelark med dropdown menyer for tillatte valg
 
-    - Men også lage en funksjon/sjekk som sjekker at påkrevde verdier for kalkuleringen er tilstandet når du importerer ett excel ark. F.eks. for at .join funksjonene skal funke så må alle rader ha: type, arealtype og regnskapstema. Dette for at man skal finne riktig verdi av naturkvalitet og forvaltnignsinteresse. Da det finnes unike kombinasjoner av disse. 
-
-
+    - Men også lage en funksjon/sjekk som sjekker at påkrevde verdier for kalkuleringen er tilstandet når du importerer ett excel ark. F.eks. for at .join funksjonene skal funke så må alle rader ha: type, arealtype og regnskapstema. Dette for at man skal finne riktig verdi av naturkvalitet og forvaltnignsinteresse. Da det finnes unike kombinasjoner av disse.
     """
     )
     return
@@ -43,27 +41,27 @@ def _(mo):
         f"""
         -- Load all CSV files into DuckDB tables
         CREATE OR REPLACE TABLE forvaltningsinteresse AS 
-        SELECT * FROM read_csv_auto('forvaltningsinteresse.csv', 
+        SELECT * FROM read_csv_auto('beregningsark/forvaltningsinteresse.csv', 
             delim=';', header=true, decimal_separator=',');
 
         CREATE OR REPLACE TABLE naturkvalitet AS 
-        SELECT * FROM read_csv_auto('naturkvalitet.csv', 
+        SELECT * FROM read_csv_auto('beregningsark/naturkvalitet.csv', 
             delim=';', header=true, decimal_separator=',');
 
         CREATE OR REPLACE TABLE avstand AS 
-        SELECT * FROM read_csv_auto('avstand fra inngrep.csv', 
+        SELECT * FROM read_csv_auto('beregningsark/avstand fra inngrep.csv', 
             delim=';', header=true, decimal_separator=',');
 
         CREATE OR REPLACE TABLE pavirkning AS 
-        SELECT * FROM read_csv_auto('påvirkning.csv', 
+        SELECT * FROM read_csv_auto('beregningsark/påvirkning.csv', 
             delim=';', header=true, decimal_separator=',');
 
         CREATE OR REPLACE TABLE tidsperspektiv AS 
-        SELECT * FROM read_csv_auto('tidsperspektiv.csv', 
+        SELECT * FROM read_csv_auto('beregningsark/tidsperspektiv.csv', 
             delim=';', header=true, decimal_separator=',');
 
         CREATE OR REPLACE TABLE vanskelighetsgrad AS 
-        SELECT * FROM read_csv_auto('vanskelighetsgrad.csv', 
+        SELECT * FROM read_csv_auto('beregningsark/vanskelighetsgrad.csv', 
             delim=';', header=true, decimal_separator=',');
         """
     )
@@ -172,11 +170,11 @@ def _(pl):
             "regnskapstema": "Økosystemareal",
             "naturkvalitet_nivå": "Svært høy lokalitetskvalitet",
             "forvaltningsinteresse_nivå": "Ingen",
-        
+
             "tapt_utstrekning": 30,
             "resterende_utstrekning": 70.0,
             "påvirkning": "Noe forringet",
-        
+
         },
         {
             "type": "Restaurering onsite",
@@ -202,7 +200,7 @@ def _(pl):
             "istandsatt_økosystemareal": 50.0,
             "mål_naturkvalitet_nivå": "Høy lokalitetskvalitet",
             "mål_forvaltningsinteresse_nivå": "Ingen",
-            
+
             "avstand fra inngrep": "Innenfor prosjektområdet + buffersone på 2 km",
             "Tidsperspektiv": "Opptil 5 år",
             "vanskelighetsgrad": "Lav vanskelighetsgrad",
@@ -700,22 +698,22 @@ def _(
         This catches invalid synthetic data early.
         """
         invalid_combinations = []
-    
+
         # Check naturkvalitet combinations (før inngrep)
         for row in delområder_df.iter_rows(named=True):
             delområde = row["delområde"]
-        
+
             # Skip rows without naturkvalitet data
             if row["arealtype"] is None or row["regnskapstema"] is None or row["naturkvalitet_nivå"] is None:
                 continue
-            
+
             # Check if combination exists in naturkvalitet_df
             matching = naturkvalitet_df.filter(
                 (pl.col("arealtype") == row["arealtype"]) &
                 (pl.col("regnskapstema") == row["regnskapstema"]) &
                 (pl.col("naturkvalitet_nivå") == row["naturkvalitet_nivå"])
             )
-        
+
             if len(matching) == 0:
                 invalid_combinations.append({
                     "delområde": delområde,
@@ -724,15 +722,15 @@ def _(
                     "regnskapstema": row["regnskapstema"],
                     "naturkvalitet_nivå": row["naturkvalitet_nivå"]
                 })
-    
+
         # Check MÅL naturkvalitet combinations (for restoration)
         for row in delområder_df.iter_rows(named=True):
             delområde = row["delområde"]
-        
+
             # Skip rows without mål_naturkvalitet data
             if row["mål_naturkvalitet_nivå"] is None:
                 continue
-        
+
             # For mål fields, we need arealtype and regnskapstema - either from the same row or we need to check if the nivå exists at all
             if row["arealtype"] is not None and row["regnskapstema"] is not None:
                 # Check with specific arealtype and regnskapstema
@@ -746,7 +744,7 @@ def _(
                 matching = naturkvalitet_df.filter(
                     pl.col("naturkvalitet_nivå") == row["mål_naturkvalitet_nivå"]
                 )
-        
+
             if len(matching) == 0:
                 invalid_combinations.append({
                     "delområde": delområde,
@@ -755,20 +753,20 @@ def _(
                     "regnskapstema": row["regnskapstema"],
                     "mål_naturkvalitet_nivå": row["mål_naturkvalitet_nivå"]
                 })
-    
+
         # Check forvaltningsinteresse combinations (før inngrep)
         for row in delområder_df.iter_rows(named=True):
             delområde = row["delområde"]
-        
+
             if row["arealtype"] is None or row["regnskapstema"] is None or row["forvaltningsinteresse_nivå"] is None:
                 continue
-            
+
             matching = forvaltnings_interesse_df.filter(
                 (pl.col("arealtype") == row["arealtype"]) &
                 (pl.col("regnskapstema") == row["regnskapstema"]) &
                 (pl.col("forvaltningsinteresse_nivå") == row["forvaltningsinteresse_nivå"])
             )
-        
+
             if len(matching) == 0:
                 invalid_combinations.append({
                     "delområde": delområde,
@@ -777,14 +775,14 @@ def _(
                     "regnskapstema": row["regnskapstema"],
                     "forvaltningsinteresse_nivå": row["forvaltningsinteresse_nivå"]
                 })
-    
+
         # Check MÅL forvaltningsinteresse combinations (for restoration)
         for row in delområder_df.iter_rows(named=True):
             delområde = row["delområde"]
-        
+
             if row["mål_forvaltningsinteresse_nivå"] is None:
                 continue
-            
+
             if row["arealtype"] is not None and row["regnskapstema"] is not None:
                 # Check with specific arealtype and regnskapstema
                 matching = forvaltnings_interesse_df.filter(
@@ -797,7 +795,7 @@ def _(
                 matching = forvaltnings_interesse_df.filter(
                     pl.col("forvaltningsinteresse_nivå") == row["mål_forvaltningsinteresse_nivå"]
                 )
-        
+
             if len(matching) == 0:
                 invalid_combinations.append({
                     "delområde": delområde,
@@ -806,7 +804,7 @@ def _(
                     "regnskapstema": row["regnskapstema"],
                     "mål_forvaltningsinteresse_nivå": row["mål_forvaltningsinteresse_nivå"]
                 })
-    
+
         # Check risikofaktor values
         risk_checks = [
             ("avstand fra inngrep", avstand_df),
@@ -814,7 +812,7 @@ def _(
             ("Tidsperspektiv", tidsperspektiv_df),
             ("vanskelighetsgrad", vanskelighetsgrad_df)
         ]
-    
+
         for column_name, lookup_df in risk_checks:
             for value in delområder_df[column_name].drop_nulls().unique():
                 if len(lookup_df.filter(pl.col(column_name) == value)) == 0:
@@ -822,7 +820,7 @@ def _(
                         "issue": f"{column_name} value not found in lookup table",
                         "value": value
                     })
-    
+
         # Assert and provide helpful error message
         if invalid_combinations:
             error_msg = "\n\nINVALID DATA COMBINATIONS FOUND:\n"
@@ -831,7 +829,7 @@ def _(
                 error_msg += f"\n{invalid}\n"
             error_msg += "\n" + "=" * 50
             error_msg += "\nFix your synthetic data to use valid combinations from the CSV files."
-        
+
             assert False, error_msg
     return
 
@@ -879,12 +877,12 @@ def _(calculate_naturpoeng_tapt, pl):
             "forvaltningsinteresse_verdi": [2],
             "resterende_utstrekning": [4.0],
             "påvirkning_verdi": [5.0]
-        
+
         })
 
         # Act
         result_test_nptapt = calculate_naturpoeng_tapt(test_data1) 
-    
+
         # Assert
         expected_value = (6 * 5 * 2) + (4 * 5 * 2) * 5  # = 250
         actual_value = result_test_nptapt["naturpoeng_tapt"][0] #[0] sier bare start på kolonnen 0, men her har du bare en kolonne så trengs egentlig ikke. 
@@ -912,7 +910,7 @@ def _(calculate_naturpoeng_skapt_onsite, pl):
 
         # Act
         result_test_onsite = calculate_naturpoeng_skapt_onsite(test_data)
-    
+
         # Assert
         expected_value = (8.0 * 4.0 * 3.0) * (0.9 * 0.8 * 0.7)  # = 96 * 0.504 = 48.384
         actual_value = result_test_onsite["naturpoeng_skapt_onsite"][0]
@@ -940,7 +938,7 @@ def _(calculate_naturpoeng_skapt_offsite, pl):
 
         # Act
         result_test_offsite = calculate_naturpoeng_skapt_offsite(test_data)
-    
+
         # Assert
         expected_value = ((10.0 * 5.0 * 3.0) - (6.0 * 4.0 * 2.0)) * (0.8 * 0.7 * 0.9)  # = (150 - 48) * 0.504 = 102 * 0.504 = 51.408
         actual_value = result_test_offsite["naturpoeng_skapt_offsite"][0]
