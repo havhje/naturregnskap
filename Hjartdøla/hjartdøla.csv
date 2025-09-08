@@ -1,0 +1,85 @@
+type,delområde,regnskapstema,arealtype,før/etter,best_case/worst_case,utstrekning_for_inngrep,naturkvalitet_nivå,naturkvalitet_begrunnelse,forvaltningsinteresse_nivå,forvaltningsinteresse_begrunnelse,påvirkning,tapt_utstrekning,resterende_utstrekning,naturkvalitet_verdi,naturkvalitet_definisjon,forvaltningsinteresse_verdi,påvirkning_verdi,naturpoeng_for_inngrep,naturpoeng_tapt
+Påvirket delområde,Breivatnet,Vannforekomster,Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer,etter,best_case,3566,Moderat kvalitet,"Fisk er vurdert til moderat, 
+hydrologisk regime er vurdert til dårlig, 
+kjemisk tilstand er ikke vurdert","Vassdrag (potensielt) høyproduktive for ørret, røye eller sik","Innlandsfisk med regional eller lokal verdi som røye og ørret gir ""noe verdi""
+ eller ""moderat verdi"" avhengig produksjon/størrelse hos fisken",,,,2.2,Moderat økologisk tilstand (Vann-Nett),3.0,,23535.600000000002,
+Påvirket delområde,Breivatnet,Vannforekomster,Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer,etter,worst_case,3566,Svært lav kvalitet,"Fisk er vurdert til moderat, 
+hydrologisk regime er vurdert til dårlig, 
+kjemisk tilstand er ikke vurdert",Innlandsfisk: små bestander uten spesielle verdier,"Innlandsfisk med regional eller lokal verdi som røye og ørret gir ""noe verdi""
+ eller ""moderat verdi"" avhengig produksjon/størrelse hos fisken",,,,1.0,Svært dårlig økologisk tilstand (Vann-Nett),1.0,,3566.0,
+Påvirket delområde,Breivatnet,Vannforekomster,Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer,før,best_case,3566,Svært høy kvalitet,"Basert på eksisterende
+ kunnskap om påvirkninger av reguleringshøyde på fisk og bunndyr antas det at reguleringen har forringet naturkvalitet (økologisk tilstand) minst étt trinn. Støtteparameteren reguleringshøyde alene (tabell 6.19) indikerer en svært dårlig tilstand med en reguleringshøyde >12m.","Vassdrag (potensielt) høyproduktive for ørret, røye eller sik","Innlandsfisk med regional eller lokal verdi som røye og ørret gir ""noe verdi""
+ eller ""moderat verdi"" avhengig produksjon/størrelse hos fisken",,,,4.0,Svært god økologisk tilstand (Vann-Nett),3.0,,42792.0,
+Påvirket delområde,Breivatnet,Vannforekomster,Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer,før,worst_case,3566,Svært høy kvalitet,"Basert på eksisterende
+ kunnskap om påvirkninger av reguleringshøyde på fisk og bunndyr antas det at reguleringen har forringet naturkvalitet (økologisk tilstand) minst étt trinn. Støtteparameteren reguleringshøyde alene (tabell 6.19) indikerer en svært dårlig tilstand med en reguleringshøyde >12m.",Innlandsfisk: små bestander uten spesielle verdier,"Innlandsfisk med regional eller lokal verdi som røye og ørret gir ""noe verdi""
+ eller ""moderat verdi"" avhengig produksjon/størrelse hos fisken",,,,4.0,Svært god økologisk tilstand (Vann-Nett),1.0,,14264.0,
+Påvirket delområde,Kovvatnet,Vannforekomster,Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer,etter,best_case,3572,Moderat kvalitet,"Fisk er vurdert til moderat, 
+hydrologisk regime er vurdert til dårlig, 
+kjemisk tilstand er ikke vurdert","Vassdrag (potensielt) høyproduktive for ørret, røye eller sik","Innlandsfisk med regional eller lokal verdi som røye og ørret gir ""noe verdi""
+ eller ""moderat verdi"" avhengig produksjon/størrelse hos fisken",,,,2.2,Moderat økologisk tilstand (Vann-Nett),3.0,,23575.2,
+Påvirket delområde,Kovvatnet,Vannforekomster,Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer,etter,worst_case,3572,Svært lav kvalitet,"Fisk er vurdert til moderat, 
+hydrologisk regime er vurdert til dårlig, 
+kjemisk tilstand er ikke vurdert",Innlandsfisk: små bestander uten spesielle verdier,"Innlandsfisk med regional eller lokal verdi som røye og ørret gir ""noe verdi""
+ eller ""moderat verdi"" avhengig produksjon/størrelse hos fisken",,,,1.0,Svært dårlig økologisk tilstand (Vann-Nett),1.0,,3572.0,
+Påvirket delområde,Kovvatnet,Vannforekomster,Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer,før,best_case,3572,Svært høy kvalitet,"Basert på eksisterende
+ kunnskap om påvirkninger av reguleringshøyde på fisk og bunndyr antas det at reguleringen har forringet naturkvalitet (økologisk tilstand) minst étt trinn. Støtteparameteren reguleringshøyde alene (tabell 6.19) indikerer en svært dårlig tilstand med en reguleringshøyde >12m.","Vassdrag (potensielt) høyproduktive for ørret, røye eller sik","Innlandsfisk med regional eller lokal verdi som røye og ørret gir ""noe verdi""
+ eller ""moderat verdi"" avhengig produksjon/størrelse hos fisken",,,,4.0,Svært god økologisk tilstand (Vann-Nett),3.0,,42864.0,
+Påvirket delområde,Kovvatnet,Vannforekomster,Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer,før,worst_case,3572,Svært høy kvalitet,"Basert på eksisterende
+ kunnskap om påvirkninger av reguleringshøyde på fisk og bunndyr antas det at reguleringen har forringet naturkvalitet (økologisk tilstand) minst étt trinn. Støtteparameteren reguleringshøyde alene (tabell 6.19) indikerer en svært dårlig tilstand med en reguleringshøyde >12m.",Innlandsfisk: små bestander uten spesielle verdier,"Innlandsfisk med regional eller lokal verdi som røye og ørret gir ""noe verdi""
+ eller ""moderat verdi"" avhengig produksjon/størrelse hos fisken",,,,4.0,Svært god økologisk tilstand (Vann-Nett),1.0,,14288.0,
+Påvirket delområde,Bonsvatn,Vannforekomster,Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer,etter,best_case,2723,Moderat kvalitet,"Fisk er vurdert til moderat, 
+hydrologisk regime er vurdert til dårlig, 
+kjemisk tilstand er ikke vurdert","Vassdrag (potensielt) høyproduktive for ørret, røye eller sik","Innlandsfisk med regional eller lokal verdi som røye og ørret gir ""noe verdi""
+ eller ""moderat verdi"" avhengig produksjon/størrelse hos fisken",,,,2.2,Moderat økologisk tilstand (Vann-Nett),3.0,,17971.800000000003,
+Påvirket delområde,Bonsvatn,Vannforekomster,Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer,etter,worst_case,2723,Svært lav kvalitet,"Fisk er vurdert til moderat, 
+hydrologisk regime er vurdert til dårlig, 
+kjemisk tilstand er ikke vurdert",Innlandsfisk: små bestander uten spesielle verdier,"Innlandsfisk med regional eller lokal verdi som røye og ørret gir ""noe verdi""
+ eller ""moderat verdi"" avhengig produksjon/størrelse hos fisken",,,,1.0,Svært dårlig økologisk tilstand (Vann-Nett),1.0,,2723.0,
+Påvirket delområde,Bonsvatn,Vannforekomster,Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer,før,best_case,2723,Svært høy kvalitet,"Basert på eksisterende
+ kunnskap om påvirkninger av reguleringshøyde på fisk og bunndyr antas det at reguleringen har forringet naturkvalitet (økologisk tilstand) minst étt trinn. Støtteparameteren reguleringshøyde alene (tabell 6.19) indikerer en svært dårlig tilstand med en reguleringshøyde >12m.","Vassdrag (potensielt) høyproduktive for ørret, røye eller sik","Innlandsfisk med regional eller lokal verdi som røye og ørret gir ""noe verdi""
+ eller ""moderat verdi"" avhengig produksjon/størrelse hos fisken",,,,4.0,Svært god økologisk tilstand (Vann-Nett),3.0,,32676.0,
+Påvirket delområde,Bonsvatn,Vannforekomster,Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer,før,worst_case,2723,Svært høy kvalitet,"Basert på eksisterende
+ kunnskap om påvirkninger av reguleringshøyde på fisk og bunndyr antas det at reguleringen har forringet naturkvalitet (økologisk tilstand) minst étt trinn. Støtteparameteren reguleringshøyde alene (tabell 6.19) indikerer en svært dårlig tilstand med en reguleringshøyde >12m.",Innlandsfisk: små bestander uten spesielle verdier,"Innlandsfisk med regional eller lokal verdi som røye og ørret gir ""noe verdi""
+ eller ""moderat verdi"" avhengig produksjon/størrelse hos fisken",,,,4.0,Svært god økologisk tilstand (Vann-Nett),1.0,,10892.0,
+Påvirket delområde,Vindsjåen,Vannforekomster,Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer,etter,best_case,4727,Moderat kvalitet,"Fisk er vurdert til moderat, 
+hydrologisk regime er vurdert til dårlig, 
+kjemisk tilstand er ikke vurdert","Vassdrag (potensielt) høyproduktive for ørret, røye eller sik","Innlandsfisk med regional eller lokal verdi som røye og ørret gir ""noe verdi""
+ eller ""moderat verdi"" avhengig produksjon/størrelse hos fisken",,,,2.2,Moderat økologisk tilstand (Vann-Nett),3.0,,31198.200000000004,
+Påvirket delområde,Vindsjåen,Vannforekomster,Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer,etter,worst_case,4727,Svært lav kvalitet,"Fisk er vurdert til moderat, 
+hydrologisk regime er vurdert til dårlig, 
+kjemisk tilstand er ikke vurdert",Innlandsfisk: små bestander uten spesielle verdier,"Innlandsfisk med regional eller lokal verdi som røye og ørret gir ""noe verdi""
+ eller ""moderat verdi"" avhengig produksjon/størrelse hos fisken",,,,1.0,Svært dårlig økologisk tilstand (Vann-Nett),1.0,,4727.0,
+Påvirket delområde,Vindsjåen,Vannforekomster,Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer,før,best_case,4727,Svært høy kvalitet,"Basert på eksisterende
+ kunnskap om påvirkninger av reguleringshøyde på fisk og bunndyr antas det at reguleringen har forringet naturkvalitet (økologisk tilstand) minst étt trinn. Støtteparameteren reguleringshøyde alene (tabell 6.19) indikerer en svært dårlig tilstand med en reguleringshøyde >12m.","Vassdrag (potensielt) høyproduktive for ørret, røye eller sik","Innlandsfisk med regional eller lokal verdi som røye og ørret gir ""noe verdi""
+ eller ""moderat verdi"" avhengig produksjon/størrelse hos fisken",,,,4.0,Svært god økologisk tilstand (Vann-Nett),3.0,,56724.0,
+Påvirket delområde,Vindsjåen,Vannforekomster,Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer,før,worst_case,4727,Svært høy kvalitet,"Basert på eksisterende
+ kunnskap om påvirkninger av reguleringshøyde på fisk og bunndyr antas det at reguleringen har forringet naturkvalitet (økologisk tilstand) minst étt trinn. Støtteparameteren reguleringshøyde alene (tabell 6.19) indikerer en svært dårlig tilstand med en reguleringshøyde >12m.",Innlandsfisk: små bestander uten spesielle verdier,"Innlandsfisk med regional eller lokal verdi som røye og ørret gir ""noe verdi""
+ eller ""moderat verdi"" avhengig produksjon/størrelse hos fisken",,,,4.0,Svært god økologisk tilstand (Vann-Nett),1.0,,18908.0,
+Påvirket delområde,Skjesvatnet,Vannforekomster,Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer,etter,best_case,4339,Moderat kvalitet,"Fisk er vurdert til moderat, 
+hydrologisk regime er vurdert til dårlig, 
+kjemisk tilstand er ikke vurdert","Vassdrag (potensielt) høyproduktive for ørret, røye eller sik","Innlandsfisk med regional eller lokal verdi som røye og ørret gir ""noe verdi""
+ eller ""moderat verdi"" avhengig produksjon/størrelse hos fisken",,,,2.2,Moderat økologisk tilstand (Vann-Nett),3.0,,28637.4,
+Påvirket delområde,Skjesvatnet,Vannforekomster,Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer,etter,worst_case,4339,Svært lav kvalitet,"Fisk er vurdert til moderat, 
+hydrologisk regime er vurdert til dårlig, 
+kjemisk tilstand er ikke vurdert",Innlandsfisk: små bestander uten spesielle verdier,"Innlandsfisk med regional eller lokal verdi som røye og ørret gir ""noe verdi""
+ eller ""moderat verdi"" avhengig produksjon/størrelse hos fisken",,,,1.0,Svært dårlig økologisk tilstand (Vann-Nett),1.0,,4339.0,
+Påvirket delområde,Skjesvatnet,Vannforekomster,Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer,før,best_case,4339,Svært høy kvalitet,"Basert på eksisterende
+ kunnskap om påvirkninger av reguleringshøyde på fisk og bunndyr antas det at reguleringen har forringet naturkvalitet (økologisk tilstand) minst étt trinn. Støtteparameteren reguleringshøyde alene (tabell 6.19) indikerer en svært dårlig tilstand med en reguleringshøyde >12m.","Vassdrag (potensielt) høyproduktive for ørret, røye eller sik","Innlandsfisk med regional eller lokal verdi som røye og ørret gir ""noe verdi""
+ eller ""moderat verdi"" avhengig produksjon/størrelse hos fisken",,,,4.0,Svært god økologisk tilstand (Vann-Nett),3.0,,52068.0,
+Påvirket delområde,Skjesvatnet,Vannforekomster,Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer,før,worst_case,4339,Svært høy kvalitet,"Basert på eksisterende
+ kunnskap om påvirkninger av reguleringshøyde på fisk og bunndyr antas det at reguleringen har forringet naturkvalitet (økologisk tilstand) minst étt trinn. Støtteparameteren reguleringshøyde alene (tabell 6.19) indikerer en svært dårlig tilstand med en reguleringshøyde >12m.",Innlandsfisk: små bestander uten spesielle verdier,"Innlandsfisk med regional eller lokal verdi som røye og ørret gir ""noe verdi""
+ eller ""moderat verdi"" avhengig produksjon/størrelse hos fisken",,,,4.0,Svært god økologisk tilstand (Vann-Nett),1.0,,17356.0,
+Påvirket delområde,Hjartdøl øvre,Vannforekomster,Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer,etter,best_case,7158,Moderat kvalitet,"Fisk er vurdert til moderat, 
+hydrologisk regime er vurdert til dårlig, 
+kjemisk tilstand er ikke vurdert","Vassdrag (potensielt) høyproduktive for ørret, røye eller sik","Innlandsfisk med regional eller lokal verdi som røye og ørret gir ""noe verdi""
+ eller ""moderat verdi"" avhengig produksjon/størrelse hos fisken",,,,2.2,Moderat økologisk tilstand (Vann-Nett),3.0,,47242.8,
+Påvirket delområde,Hjartdøl øvre,Vannforekomster,Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer,etter,worst_case,7158,Svært lav kvalitet,"Fisk er vurdert til moderat, 
+hydrologisk regime er vurdert til dårlig, 
+kjemisk tilstand er ikke vurdert",Innlandsfisk: små bestander uten spesielle verdier,"Innlandsfisk med regional eller lokal verdi som røye og ørret gir ""noe verdi""
+ eller ""moderat verdi"" avhengig produksjon/størrelse hos fisken",,,,1.0,Svært dårlig økologisk tilstand (Vann-Nett),1.0,,7158.0,
+Påvirket delområde,Hjartdøl øvre,Vannforekomster,Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer,før,best_case,7158,Svært høy kvalitet,"Basert på eksisterende
+ kunnskap om påvirkninger av reguleringshøyde på fisk og bunndyr antas det at reguleringen har forringet naturkvalitet (økologisk tilstand) minst étt trinn. Støtteparameteren reguleringshøyde alene (tabell 6.19) indikerer en svært dårlig tilstand med en reguleringshøyde >12m.","Vassdrag (potensielt) høyproduktive for ørret, røye eller sik","Innlandsfisk med regional eller lokal verdi som røye og ørret gir ""noe verdi""
+ eller ""moderat verdi"" avhengig produksjon/størrelse hos fisken",,,,4.0,Svært god økologisk tilstand (Vann-Nett),3.0,,85896.0,
+Påvirket delområde,Hjartdøl øvre,Vannforekomster,Vannforekomster inkl. tilhørende funksjonsområder for vannlevende organismer,før,worst_case,7158,Svært høy kvalitet,"Basert på eksisterende
+ kunnskap om påvirkninger av reguleringshøyde på fisk og bunndyr antas det at reguleringen har forringet naturkvalitet (økologisk tilstand) minst étt trinn. Støtteparameteren reguleringshøyde alene (tabell 6.19) indikerer en svært dårlig tilstand med en reguleringshøyde >12m.",Innlandsfisk: små bestander uten spesielle verdier,"Innlandsfisk med regional eller lokal verdi som røye og ørret gir ""noe verdi""
+ eller ""moderat verdi"" avhengig produksjon/størrelse hos fisken",,,,4.0,Svært god økologisk tilstand (Vann-Nett),1.0,,28632.0,
