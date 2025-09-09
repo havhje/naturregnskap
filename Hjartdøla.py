@@ -83,9 +83,9 @@ def _(mo):
 
     $A_{t0}$ = Areal (daa) eller lineær vannforekomst (m) før tiltak
 
-    $Nk_{t0}$ = Naturkvalitet før tiltak
+    $Nk_{t0}$ = Naturkvalitet før tiltak (**for vann; Nk pr. delstrekning[skjønnsvurdering]**)
 
-    $Nf_{t0}$ = Forvaltningsinteresse før tiltak
+    $Nf_{t0}$ = Forvaltningsinteresse før tiltak (**for vann; Nf pr. delstrekning[skjønnsvurdering]**)
 
     ---
 
