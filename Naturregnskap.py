@@ -12,9 +12,7 @@ def _(mo):
 
     - Lage ett excelark med dropdown menyer for tillatte valg
 
-    - Men også lage en funksjon/sjekk som sjekker at påkrevde verdier for kalkuleringen er tilstandet når du importerer ett excel ark. F.eks. for at .join funksjonene skal funke så må alle rader ha: type, arealtype og regnskapstema. Dette for at man skal finne riktig verdi av naturkvalitet og forvaltnignsinteresse. Da det finnes unike kombinasjoner av disse. 
-
-
+    - Men også lage en funksjon/sjekk som sjekker at påkrevde verdier for kalkuleringen er tilstandet når du importerer ett excel ark. F.eks. for at .join funksjonene skal funke så må alle rader ha: type, arealtype og regnskapstema. Dette for at man skal finne riktig verdi av naturkvalitet og forvaltnignsinteresse. Da det finnes unike kombinasjoner av disse.
     """
     )
     return
