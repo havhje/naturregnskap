@@ -1,0 +1,151 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.15.2"
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "51e3f9e026c122df898ac0186db62b98",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "hLrQ",
+      "code_hash": "735e21f3e89c4398baab71e54b645775",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h1 id=\"hjartdla\">Hjartd\u00f8la</h1>\n<h2 id=\"case-naturregnskap-forelpige-resultater-og-vurderinger\">Case naturregnskap - Forel\u00f8pige resultater og vurderinger</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "KCzD",
+      "code_hash": "37dd46fabfd64b8fd947a2a17c5361ce",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"naturpoeng-fr-inngrep\">Naturpoeng f\u00f8r inngrep</h2>\n<marimo-tex class=\"arithmatex\">||[\\text{Naturpoeng (f\u00f8r)} = A_{t0} \\times Nk_{t0} \\times Nf_{t0}||]</marimo-tex><span class=\"paragraph\"><strong>Hvor:</strong></span>\n<span class=\"paragraph\"><marimo-tex class=\"arithmatex\">||(A_{t0}||)</marimo-tex> = Areal (daa) eller line\u00e6r vannforekomst (m) f\u00f8r tiltak</span>\n<span class=\"paragraph\"><marimo-tex class=\"arithmatex\">||(Nk_{t0}||)</marimo-tex> = Naturkvalitet f\u00f8r tiltak</span>\n<span class=\"paragraph\"><marimo-tex class=\"arithmatex\">||(Nf_{t0}||)</marimo-tex> = Forvaltningsinteresse f\u00f8r tiltak</span>\n<h2 id=\"naturpoeng-tapt\">Naturpoeng tapt</h2>\n<marimo-tex class=\"arithmatex\">||[\\text{Naturpoeng (tapt)} = A_{\\text{tapt}} \\times Nk_{t0} \\times Nf_{t0} + (A_{\\text{rest}} \\times Nk_{t0} \\times Nf_{t0}) \\times P||]</marimo-tex><span class=\"paragraph\"><strong>Hvor:</strong></span>\n<ul>\n<li>\n<span class=\"paragraph\"><marimo-tex class=\"arithmatex\">||(A_{\\text{tapt}}||)</marimo-tex> = Nedbygd areal (daa) eller \u00f8delagt line\u00e6r vannforekomst (delstrekning i m)</span>\n</li>\n<li>\n<span class=\"paragraph\"><marimo-tex class=\"arithmatex\">||(A_{\\text{rest}}||)</marimo-tex> = Resterende areal (daa) og line\u00e6re vannforekomster (m) som er p\u00e5virket p\u00e5 andre m\u00e5ter enn direkte arealtap</span>\n</li>\n<li>\n<span class=\"paragraph\"><marimo-tex class=\"arithmatex\">||(Nk_{t0}||)</marimo-tex> = Naturkvalitet f\u00f8r tiltak</span>\n</li>\n<li>\n<span class=\"paragraph\"><marimo-tex class=\"arithmatex\">||(Nf_{t0}||)</marimo-tex> = Forvaltningsinteresse f\u00f8r tiltak</span>\n</li>\n<li>\n<span class=\"paragraph\"><marimo-tex class=\"arithmatex\">||(P||)</marimo-tex> = P\u00e5virkningsfaktor</span>\n</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "USTL",
+      "code_hash": "8146263fb73d019245e0e0a66a03d16d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"skrivc-at-du-bruker-samme-formel-for-naturpoeng-etter-som-fr-og-at-du-ikke-bruker-tapt-formlene-pga-tufordringen-med-denne-mtp-vann-og-at-du-har-noe-etterdata\">Skrivc at du bruker samme formel for naturpoeng etter som f\u00f8r, og at du ikke bruker tapt formlene. Pga tufordringen med denne mtp vann og at du har noe etterdata.</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "hTrs",
+      "code_hash": "7f5cc8c086253af616ef2734201674a4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert\"><h3 id=\"oversikt-hjartdla\">Oversikt Hjartd\u00f8la</h3></span></div><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><img src='./@file/1796082-3123886-ATs58bpq.png' /></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "HcUJ",
+      "code_hash": "f507dd6a9cc5c06d51ed11e74f66e3e2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "mDYX",
+      "code_hash": "34d67d095f6ab6ffa19d12e6c8bedeb2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h1 id=\"lag-den-under-selv-men-diu-ma-ha-med-fretter-lag-fire-celler-og-bruk-mohstack-til-a-stacke-de-under-der-sa-kan-du-ha-formelen\">Lag den under selv, men diu m\u00e5 ha med f\u00f8r/etter. Lag fire \"celler\" og bruk mo.hstack til \u00e5 stacke de. Under der s\u00e5 kan du ha formelen.</h1>\n<span class=\"paragraph\">F\u00e5 med rangen/spennet til alle verdiene. og forklaringen p\u00e5 hvorfor verdien er satt som den er. </span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "DBzL",
+      "code_hash": "dc4864d9e4d0c650753624cb37c5a6dc",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"vis-den-prosentvise-forskjellen-mellom-de-ulike-scenarione-om-utstrekningen-er-lik-mellom-de-ulike-scenarioene-for-ett-delomrade-er-det-den-forskjellen-mellom-faktorene-se-under-som-gir-deg-forskjell\">Vis den prosentvise forskjellen mellom de ulike scenarione. Om utstrekningen er lik mellom de ulike scenarioene for ett delomr\u00e5de. Er det den % forskjellen mellom faktorene \"se under \" som gir deg % forskjell.</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "GBAi",
+      "code_hash": "e7f33789b30b6c7858f892ea8395b4af",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"konstante-verdier-per-scenario\">Konstante verdier per scenario</h2>\n<span class=\"paragraph\"><em>Lik for alle delomr\u00e5der - kun areal/utstrekning som endres</em></span>\n<h3 id=\"best-case-scenario\">Best Case Scenario</h3>\n<ul>\n<li><strong>Naturkvalitet (Nk)</strong>: 2.2 <em>(mulig verdiomr\u00e5de - sjekkkk!!!: 0-4)</em></li>\n<li><strong>Forvaltningsinteresse (Nf)</strong>: 3.0 <em>(mulig verdiomr\u00e5de: 0-4)</em></li>\n<li><strong>Konstant produkt</strong>: Nk \u00d7 Nf = 2.2 \u00d7 3.0 = <strong>6.6</strong></li>\n</ul>\n<h3 id=\"worst-case-scenario\">Worst Case Scenario</h3>\n<ul>\n<li><strong>Naturkvalitet (Nk)</strong>: 1.0 <em>(mulig verdiomr\u00e5de: 0-4)</em></li>\n<li><strong>Forvaltningsinteresse (Nf)</strong>: 1.0 <em>(mulig verdiomr\u00e5de: 0-4)</em></li>\n<li><strong>Konstant produkt</strong>: Nk \u00d7 Nf = 1.0 \u00d7 1.0 = <strong>1.0</strong></li>\n</ul>\n<hr />\n<h3 id=\"variabel-per-delomrade\">Variabel per delomr\u00e5de</h3>\n<ul>\n<li><strong>Utstrekning (U)</strong>: Varierer per delomr\u00e5de (meter)</li>\n</ul>\n<h3 id=\"forenklet-beregning\">Forenklet beregning</h3>\n<span class=\"paragraph\">I praksis bruker vi f\u00f8lgende formel:</span>\n<marimo-tex class=\"arithmatex\">||[\\text{Naturpoeng}_{\\text{delomr\u00e5de}} = U_{\\text{delomr\u00e5de}} \\times (Nk \\times Nf)_{\\text{scenario}}||]</marimo-tex></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "laiS",
+      "code_hash": "37976d4e88792e7d47035d532be857e7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='laiS-0' random-id='3f6147c8-543b-9967-970c-32171572cf67'><marimo-vega data-initial-value='{}' data-label='null' data-spec='{&quot;config&quot;: {&quot;view&quot;: {&quot;continuousWidth&quot;: 300, &quot;continuousHeight&quot;: 300}, &quot;axis&quot;: {&quot;labelFontSize&quot;: 12, &quot;titleFontSize&quot;: 14}, &quot;facet&quot;: {&quot;spacing&quot;: 8}, &quot;legend&quot;: {&quot;columnPadding&quot;: 15, &quot;padding&quot;: 10, &quot;rowPadding&quot;: 5, &quot;symbolSize&quot;: 120, &quot;symbolStrokeWidth&quot;: 2}}, &quot;data&quot;: {&quot;url&quot;: &quot;./@file/4858-3123886-rBwP35vy.arrow&quot;, &quot;format&quot;: {&quot;type&quot;: &quot;arrow&quot;}}, &quot;mark&quot;: {&quot;type&quot;: &quot;bar&quot;, &quot;height&quot;: 25, &quot;stroke&quot;: &quot;white&quot;, &quot;strokeWidth&quot;: 3}, &quot;encoding&quot;: {&quot;color&quot;: {&quot;field&quot;: &quot;delomr&#92;u00e5de&quot;, &quot;legend&quot;: null, &quot;type&quot;: &quot;nominal&quot;}, &quot;opacity&quot;: {&quot;field&quot;: &quot;f&#92;u00f8r/etter&quot;, &quot;legend&quot;: {&quot;labelFontSize&quot;: 12, &quot;title&quot;: &quot;Tidspunkt&quot;, &quot;titleFontSize&quot;: 14}, &quot;scale&quot;: {&quot;domain&quot;: [&quot;F&#92;u00f8r&quot;, &quot;Etter&quot;], &quot;range&quot;: [1, 0.6]}, &quot;type&quot;: &quot;nominal&quot;}, &quot;row&quot;: {&quot;field&quot;: &quot;delomr&#92;u00e5de&quot;, &quot;header&quot;: {&quot;labelAlign&quot;: &quot;left&quot;, &quot;labelAngle&quot;: 0, &quot;labelFontSize&quot;: 13, &quot;title&quot;: &quot;&quot;}, &quot;type&quot;: &quot;nominal&quot;}, &quot;strokeDash&quot;: {&quot;field&quot;: &quot;best_case/worst_case&quot;, &quot;legend&quot;: {&quot;labelFontSize&quot;: 12, &quot;title&quot;: &quot;Scenario&quot;, &quot;titleFontSize&quot;: 14}, &quot;scale&quot;: {&quot;domain&quot;: [&quot;Best case&quot;, &quot;Worst case&quot;], &quot;range&quot;: [[1, 0], [5, 5]]}, &quot;type&quot;: &quot;nominal&quot;}, &quot;tooltip&quot;: [{&quot;field&quot;: &quot;delomr&#92;u00e5de&quot;, &quot;type&quot;: &quot;nominal&quot;}, {&quot;field&quot;: &quot;scenario&quot;, &quot;type&quot;: &quot;nominal&quot;}, {&quot;field&quot;: &quot;naturpoeng_for_inngrep&quot;, &quot;type&quot;: &quot;quantitative&quot;}], &quot;x&quot;: {&quot;field&quot;: &quot;naturpoeng_for_inngrep&quot;, &quot;title&quot;: &quot;Naturpoeng&quot;, &quot;type&quot;: &quot;quantitative&quot;}, &quot;y&quot;: {&quot;field&quot;: &quot;scenario&quot;, &quot;title&quot;: &quot;&quot;, &quot;type&quot;: &quot;nominal&quot;}}, &quot;height&quot;: 150, &quot;params&quot;: [{&quot;name&quot;: &quot;param_13&quot;, &quot;select&quot;: {&quot;type&quot;: &quot;interval&quot;, &quot;encodings&quot;: [&quot;x&quot;, &quot;y&quot;]}, &quot;bind&quot;: &quot;scales&quot;}], &quot;title&quot;: {&quot;text&quot;: &quot;Naturpoeng per delomr&#92;u00e5de - F&#92;u00f8r/Etter &amp; Best/Worst Case&quot;, &quot;fontSize&quot;: 16, &quot;fontWeight&quot;: &quot;normal&quot;}, &quot;width&quot;: 2000, &quot;&#36;schema&quot;: &quot;https://vega.github.io/schema/vega-lite/v5.20.1.json&quot;}' data-chart-selection='true' data-field-selection='true'></marimo-vega></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "miho",
+      "code_hash": "0289919a05f41af4b84e302c091d3156",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Slide med forslag til videre arbeid og utvikling</span>\n<span class=\"paragraph\">Fokusere p\u00e5 akvatisk\nFeltkartlegging\nEller for omr\u00e5der som er godt kartlagt\nVidereutvikle beregningsmetodikk for vann</span></span>"
+          }
+        }
+      ],
+      "console": []
+    }
+  ]
+}
