@@ -22,7 +22,7 @@ def _(mo):
         f"""
         SELECT * FROM 'Hjartdøla\hjartdøla.csv';
         """,
-        output=False
+        output=False,
     )
     return (hjartdola_df,)
 
@@ -270,6 +270,10 @@ def _(alt, hjartdola_df, mo, pl):
                 .min()
                 .alias("før_min"),
                 pl.col("naturpoeng_for_inngrep")
+                .filter(pl.col("før/etter") == "før")
+                .mean()
+                .alias("før_mean"),
+                pl.col("naturpoeng_for_inngrep")
                 .filter(pl.col("før/etter") == "etter")
                 .max()
                 .alias("etter_max"),
@@ -277,6 +281,10 @@ def _(alt, hjartdola_df, mo, pl):
                 .filter(pl.col("før/etter") == "etter")
                 .min()
                 .alias("etter_min"),
+                pl.col("naturpoeng_for_inngrep")
+                .filter(pl.col("før/etter") == "etter")
+                .mean()
+                .alias("etter_mean"),
             ]
         )
         .with_columns(
@@ -285,8 +293,8 @@ def _(alt, hjartdola_df, mo, pl):
                 (pl.col("etter_max") - pl.col("etter_min")).alias(
                     "Usikkerhet Etter"
                 ),
-                (pl.col("før_min") * 0.1).alias("Følsomhet Før (±10%)"),
-                (pl.col("etter_min") * 0.1).alias("Følsomhet Etter (±10%)"),
+                (pl.col("før_mean") * 0.2).alias("Følsomhet Før (±10%)"),
+                (pl.col("etter_mean") * 0.2).alias("Følsomhet Etter (±10%)"),
             ]
         )
     )
@@ -302,7 +310,9 @@ def _(alt, hjartdola_df, mo, pl):
                 "Følsomhet Etter (±10%)",
             ]
         )
-        .unpivot(index=["delområde"], variable_name="Type", value_name="Naturpoeng")
+        .unpivot(
+            index=["delområde"], variable_name="Type", value_name="Naturpoeng"
+        )
         .with_columns(
             [
                 pl.when(pl.col("Type").str.contains("Usikkerhet"))
@@ -341,9 +351,21 @@ def _(alt, hjartdola_df, mo, pl):
     mo.vstack(
         [
             mo.md("""  
-        **Usikkerhet (rød)** – Variasjonen mellom best og worst case scenario 
-    
-        **Følsomhet (blå)** – Effekten av ±10% endring i parametere 
+    ### Følsomhet
+    Følsomhet = Gjennomsnittet av beste og verste scenario for hvert delområde × 0,2 (representerer ±10% variasjon)
+
+    Viktig egenskap ved multiplikativ modell (A × Nk × Nf):
+
+    - 10% økning i areal → 10% økning i naturpoeng
+    - 10% økning i naturkvalitet → 10% økning i naturpoeng
+    - 10% økning i forvaltningsinteresse → 10% økning i naturpoeng
+
+    **Alle tre parameterne har lik relativ påvirkning**
+
+    Sammenligning i diagrammet:
+
+    - Blå søyler: Teoretisk effekt av ±10% parameterendring (20% totalvariasjon)
+    - Røde søyler: Faktisk usikkerhet mellom beste og verste scenario
         """),
             chart,
         ]
