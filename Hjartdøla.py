@@ -22,7 +22,7 @@ def _(mo):
         f"""
         SELECT * FROM 'Hjartdøla\hjartdøla.csv';
         """,
-        output=False,
+        output=False
     )
     return (hjartdola_df,)
 
